@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('details')->nullable();
             $table->float('price');
             $table->text('description');
-            $table->integer('downloads')->nullable();
+            $table->integer('downloads')->default(0);
             $table->string('file')->nullable();
             $table->boolean('featured')->default(false);
             $table->timestamps();

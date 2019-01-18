@@ -11,7 +11,7 @@
             <div class="row row-grid justify-content-between align-items-center text-left">
                 <div class="col-lg-6 col-md-6">
                     <hr class="line-info">
-                    <h1 class="text-white">Matt Minimal - Sample Pack Vol.1
+                    <h1 class="text-white"><a href="{{route('product.show' , $featured_product->slug)}}"><span class="text-white">{{$featured_product->name}}</span></a>
                         <br/>
                     </h1>
                     <p class="text-white mb-3">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel...</p>
@@ -61,7 +61,6 @@
                 </div>-->
             </div>
             <!-- featured product -->
-
         </div>
     </div><!-- page header -->
 
@@ -96,11 +95,23 @@
                         </h1>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
 
-                <!-- products list -->
-                <div class="row">
-                    @foreach($products as $product)
-                    <div class="col-4">
+
+    <!-- products list -->
+    <div class="container">
+        <div class="row">
+            @foreach($products as $product)
+            <div class="col-sm">
+                <div class="card">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <hr class="line-info">
+                        <h4 class="card-title">{{$product->name}}<span class="text pull-right"><i class="tim-icons icon-cloud-download-93 text-info"></i> {{$product->downloads}}</span></h4>
+
+                        <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
                         <!-- form add to cart -->
                         <div class="form-row text-center">
                             <div class="col-12">
@@ -114,12 +125,10 @@
                             </div>
                         </div><!-- end form -->
                     </div>
-                    @endforeach
-                </div><!-- row-->
-
-
+                </div>
             </div>
-        </div><!-- col 12 -->
+            @endforeach
+        </div><!-- row-->
     </div>
 
 @endsection

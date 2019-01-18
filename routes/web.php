@@ -34,10 +34,6 @@ Route::middleware ('admin')->group (function () {
 });
 
 
-//Shop
-Route::get('/shop', 'ShopController@index')->name('shop.index');
-Route::get('/shop/{product}', 'ShopController@show')->name('shop.show');
-
 //Cart
 Route::get('/cart', 'CartController@index')->name('cart.index');
 Route::post('/cart', 'CartController@store')->name('cart.store');
@@ -74,7 +70,7 @@ Route::middleware('auth')->group(function () {
 
 //Product
 Route::get('products' , 'ProductController@index')->name('product.index');
-Route::get('product/{product}' , 'ProductController@show')->name('product.show');
+Route::get('product/{slug}' , 'ProductController@show')->name('product.show');
 Route::get('download/{product}' , 'ProductController@download')->name('product.download');
 
 
@@ -83,7 +79,7 @@ Route::get('free-download/{product}' , 'ProductController@freeDownload')->name('
 
 //Blog
 Route::get('blog' , 'PostController@index')->name('blog.index');
-Route::get('blog/{slug}' , 'PostController@show')->name('post.show');
+Route::get('post/{slug}' , 'PostController@show')->name('post.show');
 
 //Services
 Route::get('services' , 'ServicesController@index')->name('services.index');

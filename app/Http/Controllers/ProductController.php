@@ -17,9 +17,32 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        
-        return view('products.index' , compact('products'));
+        $pagination = 9;
+        $categories = Category::all();
+
+        if (request()->category) {
+            $products = Product::with('categories')->whereHas('categories', function ($query) {
+                $query->where('slug', request()->category);
+            });
+            $categoryName = optional($categories->where('slug', request()->category)->first())->name;
+        } else {
+            $products = Product::where('featured', true);
+            $categoryName = 'Featured';
+        }
+
+        if (request()->sort == 'low_high') {
+            $products = $products->orderBy('price')->paginate($pagination);
+        } elseif (request()->sort == 'high_low') {
+            $products = $products->orderBy('price', 'desc')->paginate($pagination);
+        } else {
+            $products = $products->paginate($pagination);
+        }
+
+        return view('products.index')->with([
+            'products' => $products,
+            'categories' => $categories,
+            'categoryName' => $categoryName,
+        ]);
     }
 
     /**
@@ -49,9 +72,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($slug)
     {
-        return view('product.show' , compact('product'));
+        $product = Product::where('slug', $slug)->firstOrFail();
+        return view('products.show' , compact('product'));
     }
 
     /**
