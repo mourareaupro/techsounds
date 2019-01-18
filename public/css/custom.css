@@ -1,0 +1,281 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Sweetalert
+@import '~sweetalert2/src/sweetalert2.scss';
+
+.navbar-laravel {
+    background-color: #6ed3cf;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+
+* {-webkit-font-smoothing: antialiased;}
+
+.card-custom {
+    overflow: hidden;
+    min-height: 450px;
+    box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+}
+
+.card-custom-img {
+    height: 200px;
+    min-height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-color: inherit;
+}
+
+/* First border-left-width setting is a fallback */
+.card-custom-img::after {
+    position: absolute;
+    content: '';
+    top: 161px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-top-width: 40px;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 545px;
+    border-left-width: calc(575px - 5vw);
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: inherit;
+}
+
+.card-custom-avatar img {
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+    position: absolute;
+    top: 100px;
+    left: 1.25rem;
+    width: 100px;
+    height: 100px;
+}
+
+
+h1{
+
+    font-weight: 900 !important;
+    line-height: 45px;
+    color: #435b71;
+}
+
+
+.navbar-laravel a {
+    float: right;
+    line-height: 80px;
+    font-size: 18px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: inline-block;
+    text-align: center;
+    font-weight: 700;
+    color: #435b71;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.navbar-laravel {
+    position: relative;
+    height: 80px;
+    width: 100%;
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,.16);
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.16);
+}
+
+
+.navbar__logo {
+    width: 110px;
+    height: 110px;
+    margin-left: -55px;
+    top: 25px;
+    z-index: 200;
+    display: block;
+    position: absolute;
+    left: 50%;
+}
+
+.brick__title {
+    font-size: 30px;
+    font-weight: 900 !important;
+    line-height: 27px;
+    color: #435b71;
+    display: inline-block;
+    margin-bottom: 7px;
+}
+
+
+.u__h1 {
+    font-weight: 700;
+    margin-top: 76px;
+    margin-top: 41px;
+    margin-bottom: 69px;
+    font-size: 47px;
+}
+
+
+.u__h2 {
+    font-weight: 700;
+    font-size: 38px;
+}
+
+.color-grounded {
+    color: #435b71;
+}
+
+.color-color {
+    color: #f4645f;
+}
+
+a {
+    color: #435b71;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+    color: #f4645f;
+}
+
+
+
+.button--bold {
+    display: inline-block;
+    border-radius: 27px;
+    padding: 16px 27px;
+    font-size: 16px;
+    line-height: 17px;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    border: 3px solid #f4645f;
+    background-color: #f4645f;
+    color: #fff;
+}
+
+.card{
+    border-radius: 15px;
+    background-color: #fff;
+    width: 100%;
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    -webkit-box-shadow: 0 2px 43px -4px rgba(0,0,0,.19);
+    box-shadow: 0 2px 43px -4px rgba(0,0,0,.19);
+    margin-bottom: 35px;
+    position: relative;
+}
+
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(67, 91, 113);
+}
+
+
+
+.navbar-laravel {
+    position: relative;
+    height: 80px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.16);
+}
+
+.navbar__logo {
+    width: 110px;
+    height: 110px;
+    margin-left: -55px;
+    top: 25px;
+    z-index: 200;
+    display: block;
+    position: absolute;
+    left: 50%;
+}
+
+.brick__title {
+    font-size: 30px;
+    font-weight: 900 !important;
+    line-height: 27px;
+    color: #435b71;
+    display: inline-block;
+    margin-bottom: 7px;
+}
+
+.u__h1 {
+    font-weight: 700;
+    margin-top: 76px;
+    margin-top: 41px;
+    margin-bottom: 69px;
+    font-size: 47px;
+}
+
+.u__h2 {
+    font-weight: 700;
+    font-size: 38px;
+}
+
+.color-grounded {
+    color: #435b71;
+}
+
+.color-color {
+    color: #f4645f;
+}
+
+a {
+    color: #435b71;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+    color: #f4645f;
+}
+
+.button--bold {
+    display: inline-block;
+    border-radius: 27px;
+    padding: 16px 27px;
+    font-size: 16px;
+    line-height: 17px;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    transition: all 0.2s ease-out;
+    border: 3px solid #f4645f;
+    background-color: #f4645f;
+    color: #fff;
+}
+
+
+.navbar-light .navbar-nav .nav-link {
+    color: #435b71;
+}
+
+.footer {
+    width: 100%;
+    text-align: center;
+}
+
+.footer__inner {
+    padding-top: 57px;
+    padding-bottom: 57px;
+    background-color: #435b71;
+}
+
