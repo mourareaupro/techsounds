@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <hr class="line-info">
-                        <h1>Post
+                        <h1>{{$post->title}}
                             <span class="text-info">+</span>
                         </h1>
                     </div>

@@ -30,9 +30,20 @@
                             </h1>
                         </div>
                     </div>
-
-
             </div>
         </div>
+
+        <!-- product detail -->
+        <div class="row">
+            <div class="col-sm-8"><span>col-sm-8</span></div>
+            <div class="col-sm-4"><span>col-sm-4</span></div>
+        </div>
+        <div class="row">
+            <div class="col-sm"><span>col-sm</span></div>
+            <div class="col-sm"><span>col-sm</span></div>
+            <div class="col-sm"><span>col-sm</span></div>
+        </div>
+        <!-- product detail-->
+
     </div>
 @endsection
