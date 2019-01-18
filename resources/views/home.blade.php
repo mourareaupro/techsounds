@@ -33,8 +33,9 @@
                         @endif
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-5">
-                    <img src="{{asset('img/etherum.png')}}" alt="Circle image" class="img-fluid">
+                <div class="col-lg-5 col-md-5">
+                    <!--<img src="{{asset('img/etherum.png')}}" alt="Circle image" class="img-fluid">-->
+                        <img src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg" alt="Circle image" class="img-fluid">
                 </div>
 
 
@@ -104,9 +105,11 @@
     <div class="container">
         <div class="row">
             @foreach($products as $product)
-            <div class="col-sm">
+            <div class="col-sm-4">
                 <div class="card">
-                    <img class="card-img-top" src="{{ productImage($product->image) }}" alt="Card image cap">
+                    <!--<img class="card-img-top" src="{{ productImage($product->image) }}" alt="Card image cap">-->
+
+                        <img class="card-img-top" src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg" alt="Card image cap">
                     <div class="card-body">
                         <hr class="line-info">
                         <h4 class="card-title"><a href="{{route('product.show' , $product->slug)}}"><span class="text-white">{{$product->name}}</span></a><span class="text pull-right"><i class="tim-icons icon-cloud-download-93 text-info"></i> {{$product->downloads}}</span></h4>

@@ -50,25 +50,18 @@
                         <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}" required>
                     </div>
 
-                    <div class="half-form">
-                        <div class="form-group">
-                            <label for="city">City</label>
-                            <input type="text" class="form-control" id="city" name="city" value="{{ old('city') }}" required>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" class="form-control" id="city" name="city" value="{{ old('city') }}" required>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="province">Province</label>
-                            <input type="text" class="form-control" id="province" name="province" value="{{ old('province') }}" required>
-                        </div>
-                    </div> <!-- end half-form -->
-
-                    <div class="half-form">
-                        <div class="form-group">
-                            <label for="postalcode">Postal Code</label>
-                            <input type="text" class="form-control" id="postalcode" name="postalcode" value="{{ old('postalcode') }}" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone') }}" required>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="postalcode">Zip Code</label>
+                                <input type="text" class="form-control" id="postalcode" name="postalcode" value="{{ old('postalcode') }}" required>
+                            </div>
                         </div>
                     </div> <!-- end half-form -->
 
