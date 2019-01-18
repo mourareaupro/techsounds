@@ -45,9 +45,9 @@ class OrdersController extends Controller
     public function invoicePDF(Order $order){
 
         $data = ['title' => 'Welcome to HDTuto.com'];
-        $pdf = PDF::loadView('myPDF', $data);
+        $pdf = PDF::loadView('invoices.invoicePDF', $data);
 
-        return $pdf->download('itsolutionstuff.pdf');
+        return $pdf->download($order->order_number.'_invoice.pdf');
 
     }
 
