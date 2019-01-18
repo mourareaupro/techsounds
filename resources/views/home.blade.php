@@ -106,7 +106,7 @@
             @foreach($products as $product)
             <div class="col-sm">
                 <div class="card">
-                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <img class="card-img-top" src="{{ productImage($product->image) }}" alt="Card image cap">
                     <div class="card-body">
                         <hr class="line-info">
                         <h4 class="card-title">{{$product->name}}<span class="text pull-right"><i class="tim-icons icon-cloud-download-93 text-info"></i> {{$product->downloads}}</span></h4>
