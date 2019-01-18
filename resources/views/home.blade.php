@@ -109,7 +109,7 @@
                     <img class="card-img-top" src="{{ productImage($product->image) }}" alt="Card image cap">
                     <div class="card-body">
                         <hr class="line-info">
-                        <h4 class="card-title">{{$product->name}}<span class="text pull-right"><i class="tim-icons icon-cloud-download-93 text-info"></i> {{$product->downloads}}</span></h4>
+                        <h4 class="card-title"><a href="{{route('product.show' , $product->slug)}}"><span class="text-white">{{$product->name}}</span></a><span class="text pull-right"><i class="tim-icons icon-cloud-download-93 text-info"></i> {{$product->downloads}}</span></h4>
 
                         <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
                         <!-- form add to cart -->
