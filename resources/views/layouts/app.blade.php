@@ -119,37 +119,88 @@
 
         <footer class="footer">
             <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <span>1 of 3</span>
-                    </div>
-                    <div class="col-6">
 
-                        <div id="mc_embed_signup_scroll" class="newsletter-wrap">
-                            <h3 class="text-center">Subscribe to our Newsletter</h3>
-                            <div class="newsletter-wrap-inner"><div class="form-group">
-                                    <div class="mc-field-group "><label for="mce-EMAIL">Email Address </label>
-                                        <input type="email" value="" placeholder="email@mail.com" name="EMAIL" id="mce-EMAIL" class="form-control required email">
-                                    </div>
-                                    <div id="mce-responses" class="clear">
-                                        <div id="mce-error-response" class="response" style="display: none;">
-
-                                        </div>
-                                        <div id="mce-success-response" class="response" style="display: none;">
-
+                <!--<div class="row">
+                    <div class="col-sm">
+                        <div class="card card-stats ">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-5 col-md-4">
+                                        <div class="icon-big text-center icon-warning">
+                                            <i class="tim-icons icon-credit-card text-success"></i>
                                         </div>
                                     </div>
-                                    <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                                        <input type="text" name="b_c7c1912bd58997935a2b3a33b_a8ffbbc2b0" tabindex="-1" value="">
+                                    <div class="col-7 col-md-8">
+                                        <div class="numbers">
+                                            <p class="card-title">10,783
+                                            </p><p>
+                                            </p><p class="card-category">Downloads</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="col-sm">
+                        <div class="card card-stats ">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-5 col-md-4">
+                                        <div class="icon-big text-center icon-warning">
+                                            <i class="tim-icons icon-credit-card text-success"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-7 col-md-8">
+                                        <div class="numbers">
+                                            <p class="card-title">10,783
+                                            </p><p>
+                                            </p><p class="card-category">Customers</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card card-stats ">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-5 col-md-4">
+                                        <div class="icon-big text-center icon-warning">
+                                            <i class="tim-icons icon-credit-card text-success"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-7 col-md-8">
+                                        <div class="numbers">
+                                            <p class="card-title">10,783
+                                            </p><p>
+                                            </p><p class="card-category">One-shots</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+
+                <div class="spacer"></div>
+
+                <div class="row">
                     <div class="col">
-                        <span>3 of 3</span>
+                    </div>
+                    <div class="col-6">
+                        <h3 class="text-center">Subscribe to our Newsletter</h3>
+                        <form action="{{ route('newsletter.store') }}" method="POST">
+                            {{ csrf_field() }}
+                            <div class="input-group mb-3 w-75 mx-auto">
+                                <input type="email" class="form-control form-control-newsletter" placeholder="sunlimetech@gmail.com" aria-label="Recipient's username" aria-describedby="button-addon2" required>
+                                <div class="input-group-append">
+                                    <button class="btn btn-info" type="submit" id="button-addon2"><i class="fa fa-paper-plane"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col">
                     </div>
                 </div>
                 <!-- Copyright -->

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Spatie\Newsletter\Newsletter;
+use Spatie\Newsletter\NewsletterFacade;
 
 
 class NewsletterController extends Controller
@@ -26,7 +26,6 @@ class NewsletterController extends Controller
     public function create()
     {
 
-        Newsletter::subscribe('rincewind@discworld.com');
     }
 
     /**
@@ -37,7 +36,9 @@ class NewsletterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        NewsletterFacade::subscribe($request->input('email'));
+
+        die;
     }
 
     /**

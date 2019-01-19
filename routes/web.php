@@ -83,3 +83,6 @@ Route::get('post/{slug}' , 'PostController@show')->name('post.show');
 
 //Services
 Route::get('services' , 'ServicesController@index')->name('services.index');
+
+//Newsletter
+Route::post('subscribe-newsletter' , 'NewsletterController@store')->name('newsletter.store');
