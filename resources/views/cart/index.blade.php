@@ -33,6 +33,7 @@
                         <table class="table">
                             <thead>
                             <tr>
+                                <th></th>
                                 <th>Product</th>
                                 <th>Price</th>
                                 <th class="text-right">Actions</th>
@@ -41,6 +42,7 @@
                             <tbody>
                             @foreach (Cart::content() as $item)
                             <tr>
+                                <td><img class="checkout-table-img" src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg" alt="Card image cap"></td>
                                 <td>{{ $item->model->name }}</td>
                                 <td class="text">{{ presentPrice($item->subtotal) }} €</td>
                                 <td class="td-actions text-right">
@@ -100,14 +102,14 @@
                                 <span class="cart-totals-total">Total</span>
                             </div>
                             <div class="cart-totals-subtotal">
-                                {{ presentPrice(Cart::subtotal()) }} <br>
+                                {{ presentPrice(Cart::subtotal()) }} €<br>
                                 @if (session()->has('coupon'))
                                     -{{ presentPrice($discount) }} <br>&nbsp;<br>
                                     <hr>
                                     {{ presentPrice($newSubtotal) }} <br>
                                 @endif
-                                {{ presentPrice($newTax) }} <br>
-                                <span class="cart-totals-total">{{ presentPrice($newTotal) }}</span>
+                                {{ presentPrice($newTax) }} €<br>
+                                <span class="cart-totals-total">{{ presentPrice($newTotal) }} €</span>
                             </div>
                         </div>
 
