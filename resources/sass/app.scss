@@ -157,3 +157,16 @@ a {
 .dropdown-menu .dropdown-item {
     color: #212529;
 }
+
+.braintree-heading, .braintree-placeholder {
+    /* color: #000; */
+    /* font-size: 16px; */
+    margin-bottom: 10px;
+    display: none !important;
+}
+
+
+
+.braintree-large-button {
+    display: none !important;
+}

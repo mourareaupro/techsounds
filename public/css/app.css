@@ -18938,7 +18938,7 @@ label {
 }
 
 .index-page .page-header {
-  height: 100vh;
+  height: 50vh;
 }
 
 .index-page .page-header .container > .content-center.brand .h1-seo,
@@ -20190,7 +20190,7 @@ hr.line-deafult {
 }
 
 .page-header {
-  min-height: 100vh;
+  min-height: 5vh;
   max-height: 999px;
   padding: 0;
   color: #ffffff;
@@ -23655,5 +23655,17 @@ a {
 
 .dropdown-menu .dropdown-item {
   color: #212529;
+}
+
+.braintree-heading,
+.braintree-placeholder {
+  /* color: #000; */
+  /* font-size: 16px; */
+  margin-bottom: 10px;
+  display: none !important;
+}
+
+.braintree-large-button {
+  display: none !important;
 }
 

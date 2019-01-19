@@ -142,11 +142,14 @@
 
                 </div>
             </div>
-        </div>
 
-        <div class="checkout-section">
-            <div>
-                @if ($paypalToken)
+            @if ($paypalToken)
+            <div class="spacer"></div>
+            <div class="row">
+                <div class="col-md-6">
+                        <div class="text-center text-muted mb-4 mt-3">
+                            <span class="text-white">or pay with</span>
+                        </div>
                         <form method="post" id="paypal-payment-form" action="{{ route('checkout.paypal') }}">
                             @csrf
                             <section>
@@ -154,21 +157,13 @@
                                     <div id="bt-dropin"></div>
                                 </div>
                             </section>
-
                             <input id="nonce" name="payment_method_nonce" type="hidden" />
-                            <button class="btn btn-info btn-round" type="submit"><span>Pay with PayPal</span></button>
+                            <button class="btn btn-info btn-round bt full-width" type="submit"><span>Pay with PayPal</span></button>
                         </form>
-                    </div>
-                @endif
+                </div>
             </div>
-
-
-
-
-
-
-
-        </div> <!-- end checkout-section -->
+            @endif
+        </div>
     </div>
 
     <div class="spacer"></div>

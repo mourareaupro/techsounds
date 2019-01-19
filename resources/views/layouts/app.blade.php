@@ -126,7 +126,7 @@
                             </a></h1>
                     </div>
                     <div class="col-md-3">
-                        <ul class="nav">
+                        <!--<ul class="nav">
                             <li class="nav-item">
                                 <a href="../index.html" class="nav-link">
                                     Home
@@ -147,10 +147,10 @@
                                     Profile
                                 </a>
                             </li>
-                        </ul>
+                        </ul>-->
                     </div>
                     <div class="col-md-3">
-                        <ul class="nav">
+                        <!--<ul class="nav">
                             <li class="nav-item">
                                 <a href="https://creative-tim.com/contact-us" class="nav-link">
                                     Contact Us
@@ -171,10 +171,10 @@
                                     License
                                 </a>
                             </li>
-                        </ul>
+                        </ul>-->
                     </div>
                     <div class="col-md-3">
-                        <h3 class="title">Follow us:</h3>
+                        <!--<h3 class="title">Follow us:</h3>
                         <div class="btn-wrapper profile">
                             <a target="_blank" href="https://twitter.com/creativetim" class="btn btn-icon btn-neutral btn-round btn-simple" data-toggle="tooltip" data-original-title="Follow us">
                                 <i class="fab fa-twitter"></i>
@@ -185,7 +185,7 @@
                             <a target="_blank" href="https://dribbble.com/creativetim" class="btn btn-icon btn-neutral  btn-round btn-simple" data-toggle="tooltip" data-original-title="Follow us">
                                 <i class="fab fa-dribbble"></i>
                             </a>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>

@@ -86,8 +86,6 @@
                     </div>
                 @endif
 
-                <div class="spacer"></div>
-
                 <div class="row">
                     <div class="col-md-4">
                         <hr class="line-info">
@@ -109,7 +107,7 @@
                 <div class="card">
                     <!--<img class="card-img-top" src="{{ productImage($product->image) }}" alt="Card image cap">-->
 
-                        <img class="card-img-top" src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg" alt="Card image cap">
+                        <a href="{{route('product.show' , $product->slug)}}"><img class="card-img-top" src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg" alt="Card image cap"></a>
                     <div class="card-body">
                         <hr class="line-info">
                         <h4 class="card-title"><a href="{{route('product.show' , $product->slug)}}"><span class="text-white">{{$product->name}}</span></a><span class="text pull-right"><i class="tim-icons icon-cloud-download-93 text-info"></i> {{$product->downloads}}</span></h4>
