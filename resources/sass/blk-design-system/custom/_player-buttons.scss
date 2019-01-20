@@ -1,0 +1,38 @@
+.demo {
+    padding: 14px 0;
+    margin-right: 20px;
+
+}
+
+.demo li {
+    height: 38px;
+    line-height: 38px;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 1px;
+}
+
+
+.demo a {
+    height: 38px;
+    width: 38px;
+    margin-right: 12px;
+    display: block;
+    float: left;
+    background: url('http://localhost/mdevelopement/public/img/charts-btns.png') -5px -57px no-repeat;
+}
+
+.demo ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.hide-text {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
