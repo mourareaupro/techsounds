@@ -48,15 +48,15 @@
                 <div class="demo">
                     <ul>
                         <li>
-                            <a href="https://www.samplemagic.com/audio/samples/SM209 - Breaks &amp; Beats - Full Demo.mp3" class="btn-play bg-dark hide-text" data-link="product-sample" data-sampleid="4362" data-productid="2671">Play</a>
+                            <a href="#" class="btn-play bg-dark hide-text" data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-link="product-sample" data-sampleid="4362" data-productid="2671">Play</a>
                             Full Demo
                         </li>
                         <li>
-                            <a href="https://www.samplemagic.com/audio/samples/SM209 - Breaks &amp; Beats - Beats Demo 1.mp3" class="btn-play bg-dark hide-text" data-link="product-sample" data-sampleid="4363" data-productid="2671">Play</a>
+                            <a href="#" class="btn-play bg-dark hide-text" data-url="https://www.samplemagic.com/audio/samples/SM%20Studio%20-%20Indie%20Rock%20Guitars%20-%20Full%20Demo.mp3" data-link="product-sample" data-sampleid="4363" data-productid="2671">Play</a>
                             Breaks &amp; Beats Demo 1
                         </li>
                         <li>
-                            <a href="https://www.samplemagic.com/audio/samples/SM209 - Breaks &amp; Beats - Beats Demo 2.mp3" class="btn-play bg-dark hide-text" data-link="product-sample" data-sampleid="4364" data-productid="2671">Play</a>
+                            <a href="#" class="btn-play bg-dark hide-text" data-link="product-sample" data-sampleid="4364" data-productid="2671">Play</a>
                             Breaks &amp; Beats Demo 2
                         </li>
                     </ul>
@@ -99,6 +99,7 @@
                 </div>
                 <!-- waveform -->
                 <div class="col-sm-9">
+                    <p id="loading" style="display: none">Loading sample ...</p>
                     <div id="wavesurfer" class="player"></div>
                 </div>
                 <!-- waveform -->
@@ -118,7 +119,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
 
-        //$(".player-section").css("display", "none");
+        $(".player-section").css("display", "none");
 
         var wavesurfer = WaveSurfer.create({
             barWidth: 1,
@@ -133,12 +134,34 @@
             progressColor: '#f4645f'
         });
 
-        wavesurfer.load('https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3');
+        $( "a" ).click(function() {
+
+            var track = $(this).attr("data-url");
+            console.log($(this).attr("data-url"));
+
+            if(track){
+                wavesurfer.load(track);
+                $(".player-section").css("display", "block");
+            }
+        });
+
+        wavesurfer.on('loading', function (percents, eventTarget) {
+            if (percents < 100) {
+                $("#loading").css("display", "block");
+            }else{
+                $("#loading").css("display", "none");
+            }
+        });
+
+        wavesurfer.on('ready', function () {
+            wavesurfer.play();
+            $("#play").css("display", "none");
+            $("#pause").css("display", "block");
+        });
 
         $('#play').click(function(){
             if( $(this).hasClass('load') ){
                 $(this).removeClass('load');
-                wavesurfer.load('https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3');
             } else {
                 $(".player-section").css("display", "block");
                 $("#play").css("display", "none");
