@@ -85,4 +85,76 @@
             </div>
         </div>
     </div>
+
+
+    <div class="player-section" style="display: block;">
+        <div class="spacer"></div>
+        <div class="container">
+            <div class="row">
+
+                <!-- player pause -->
+                <div class="col-sm-1">
+                    <a id="pause" href="#" class="btn-custom btn-pause bg-dark hide-text" rel="nofollow" style="display: none;">Pause</a>
+                    <a id="play" href="#" class="btn-custom btn-play bg-dark hide-text" rel="nofollow" style="display: block;">Play</a>
+                </div>
+                <!-- waveform -->
+                <div class="col-sm-9">
+                    <div id="wavesurfer" class="player"></div>
+                </div>
+                <!-- waveform -->
+                <!-- add to cart -->
+                <div class="col-sm-1">
+                    <a href="#" class="btn-custom btn-add-to-basket hide-text bg-dark" data-link="product-detail" rel="nofollow" data-product-id="2667">Add to basket</a>
+                </div>
+                <!-- add to cart -->
+            </div>
+        </div>
+    </div>
+
 @endsection
+
+
+@section('scripts')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+
+        //$(".player-section").css("display", "none");
+
+        var wavesurfer = WaveSurfer.create({
+            barWidth: 1,
+            container: '#wavesurfer',
+            cursorWidth: 0,
+            dragSelection: true,
+            height: 40,
+            hideScrollbar: true,
+            interact: true,
+            normalize: true,
+            waveColor: '#ffffff',
+            progressColor: '#f4645f'
+        });
+
+        wavesurfer.load('https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3');
+
+        $('#play').click(function(){
+            if( $(this).hasClass('load') ){
+                $(this).removeClass('load');
+                wavesurfer.load('https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3');
+            } else {
+                $(".player-section").css("display", "block");
+                $("#play").css("display", "none");
+                $("#pause").css("display", "block");
+                wavesurfer.play();
+            }
+        });
+
+
+        $('#pause').click(function(){
+            $("#play").css("display", "block");
+            $("#pause").css("display", "none");
+            wavesurfer.pause();
+        });
+
+
+    </script>
+@endsection
+

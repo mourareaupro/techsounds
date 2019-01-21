@@ -23,6 +23,9 @@
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="{{ asset('css/nucleo-icons.css') }}" rel="stylesheet">
 
+    <!-- player -->
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -119,70 +122,6 @@
 
         <footer class="footer">
             <div class="container">
-
-                <!--<div class="row">
-                    <div class="col-sm">
-                        <div class="card card-stats ">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-5 col-md-4">
-                                        <div class="icon-big text-center icon-warning">
-                                            <i class="tim-icons icon-credit-card text-success"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-7 col-md-8">
-                                        <div class="numbers">
-                                            <p class="card-title">10,783
-                                            </p><p>
-                                            </p><p class="card-category">Downloads</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="card card-stats ">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-5 col-md-4">
-                                        <div class="icon-big text-center icon-warning">
-                                            <i class="tim-icons icon-credit-card text-success"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-7 col-md-8">
-                                        <div class="numbers">
-                                            <p class="card-title">10,783
-                                            </p><p>
-                                            </p><p class="card-category">Customers</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="card card-stats ">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-5 col-md-4">
-                                        <div class="icon-big text-center icon-warning">
-                                            <i class="tim-icons icon-credit-card text-success"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-7 col-md-8">
-                                        <div class="numbers">
-                                            <p class="card-title">10,783
-                                            </p><p>
-                                            </p><p class="card-category">One-shots</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
-
                 <div class="spacer"></div>
 
                 <div class="row">
@@ -210,38 +149,6 @@
                 <!-- Copyright -->
             </div>
         </footer>
-
-        <div class="player" style="display: block;">
-            <div class="container">
-                <div class="row">
-                    <div class="span7">
-                        <a href="#" class="btn btn-pause bg-dark hide-text" rel="nofollow" style="display: none;">Pause</a>
-                        <a href="#" class="btn btn-play bg-dark hide-text" rel="nofollow" style="display: block;">Play</a>
-
-                        <div class="progress" style="opacity: 1; background-image: url('https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20%26%20Beats%20-%20Full%20Demo.png');">
-                            <div class="seek-bar" style="width: 100%;">
-                                <div class="play-bar" style="width: 0%; opacity: 0.75;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end .span7 -->
-                    <div class="span5">
-                        <a href="https://www.samplemagic.com/details/2671/breaks-and-beats" class="btn btn-add-to-basket hide-text bg-dark" data-link="product-detail" rel="nofollow" data-product-id="2671">Add to basket</a>
-                        <ul class="volume volume4">
-                            <li class="bar bar1"><a href="#"><span>1</span></a></li>
-                            <li class="bar bar2"><a href="#"><span>2</span></a></li>
-                            <li class="bar bar3"><a href="#"><span>3</span></a></li>
-                            <li class="bar bar4"><a href="#"><span>4</span></a></li>
-                            <li class="bar bar5"><a href="#"><span>5</span></a></li>
-                        </ul>
-                        <p><a href="https://www.samplemagic.com/details/2671/breaks-and-beats" class="player-title" data-link="product-detail" rel="nofollow">Breaks and Beats - Full Demo<br>€34.03</a></p>
-                    </div>
-                    <!-- end .span5 -->
-                </div>
-                <!-- end .row -->
-            </div>
-            <!-- end .container -->
-        </div>
     </div>
     <!-- Scripts -->
 
