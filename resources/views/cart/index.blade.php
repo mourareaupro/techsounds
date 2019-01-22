@@ -46,18 +46,21 @@
                                 <td>{{ $item->model->name }}</td>
                                 <td class="text">{{ presentPrice($item->subtotal) }} €</td>
                                 <td class="td-actions text-right">
-                                    <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
+
+                                <button id="delete-cart-item" type="button" class="btn btn-danger btn-simple btn-icon btn-sm" data-id="{{ $item->rowId }}"><i class="tim-icons icon-simple-remove"></i></button>
+
+                                <!--<form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
 
                                         <button type="submit" rel="tooltip" class="btn btn-danger btn-simple btn-icon btn-sm">
                                             <i class="tim-icons icon-simple-remove"></i>
                                         </button>
-                                    </form>
+                                    </form>-->
                                 </td>
                             </tr>
-                            </tbody>
                             @endforeach
+                            </tbody>
                         </table>
                     </div>
             </div>
@@ -132,4 +135,8 @@
                 <div class="text-left"><a href="{{ route('home') }}" class="button">Start Shopping</a></div>
             @endif
         </div>
+@endsection
+
+@section('scripts')
+@include('products.js.ajax-cart')
 @endsection

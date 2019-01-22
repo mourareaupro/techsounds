@@ -68,13 +68,8 @@
             <div class="col-sm-8">
                 <div class="card">
                     <div class="card-body">
-                        <!-- add to cart -->
-                        <form action="{{route('cart.store' , $product)}}" method="post">
-                            {{ csrf_field() }}
-                            <button type="submit" class="btn btn-info btn-lg text-center pull-right">
-                                <i class="tim-icons icon-simple-add"></i> Add to cart
-                            </button>
-                        </form>
+                        <button id="add-to-cart" type="button" class="btn btn-info btn-lg text-center pull-right" data-id="{{ $product->id }}"><i class="tim-icons icon-simple-add"></i> Add to cart</button>
+
                         <!-- product detail & buy link -->
                         <hr class="line-info">
                         <h2 class="card-title">Description</h2>
@@ -82,32 +77,6 @@
                         <div class="text contents"><p><strong>Download Contains:</strong></p><ul><li>769 x 24-bit Wav files</li><li>340 x Apple Loops</li><li>340&nbsp;x Rex2 files</li><li>1 x Ableton Instrument Racks &amp; Projects for Ableton Live 9.7.7 (Melodic One Shots)</li><li>7 x FX Patches for Ableton Live 9.7.7</li></ul><div><p><strong>Drum Hits:</strong></p><ul><li>14 x Cymbals</li><li>57 x Foley</li><li>77 x Hats</li><li>91 x Kicks</li><li>45 x Percussion</li><li>78 x Snares</li><li>8 x Toms</li><li>5 x Custom Kits for Maschine 2 (2.7.8), Battery 4 (4.1.6), Kong (Reason 10.2), EXS24 (Logic 10.4.2), FPC (FL Studio 20.0.3) and Ableton Drum Rack (Live 9.7.7)</li><li>7 x Sampler Formats for Kontakt (5.8.1), NN-XT (Reason 10.2), EXS24 (Logic 10.4.2) and Ableton Drum Rack (Live 9.7.7)</li></ul></div></div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="player-section" style="display: block;">
-        <div class="spacer"></div>
-        <div class="container">
-            <div class="row">
-
-                <!-- player pause -->
-                <div class="col-sm-1">
-                    <a id="pause" href="#" class="btn-custom btn-pause bg-dark hide-text" rel="nofollow" style="display: none;">Pause</a>
-                    <a id="play" href="#" class="btn-custom btn-play bg-dark hide-text" rel="nofollow" style="display: block;">Play</a>
-                </div>
-                <!-- waveform -->
-                <div class="col-sm-9">
-                    <p id="loading" style="display: none">Loading sample ...</p>
-                    <div id="wavesurfer" class="player"></div>
-                </div>
-                <!-- waveform -->
-                <!-- add to cart -->
-                <div class="col-sm-1">
-                    <a href="#" class="btn-custom btn-add-to-basket hide-text bg-dark" data-link="product-detail" rel="nofollow" data-product-id="2667">Add to basket</a>
-                </div>
-                <!-- add to cart -->
             </div>
         </div>
     </div>
@@ -179,5 +148,8 @@
 
 
     </script>
+
+
+    @include('products.js.ajax-cart')
 @endsection
 

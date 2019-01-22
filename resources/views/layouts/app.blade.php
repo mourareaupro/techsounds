@@ -68,7 +68,7 @@
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Authentication Links -->
-                        <li class="nav-item{{ currentRoute(route('cart.index')) }}"><a class="nav-link" href="{{ route('cart.index') }}"><i class="tim-icons icon-cart"></i>  @if (Cart::count() > 0) <span class="badge badge-pill badge-primary">  {{ Cart::count() }}</span>@endif</a></li>
+                        <li class="nav-item{{ currentRoute(route('cart.index')) }}"><a class="nav-link" href="{{ route('cart.index') }}"><i class="tim-icons icon-cart"></i><span id="cart-items-count" class="badge badge-pill badge-primary">{{ Cart::count() }}</span></a></li>
                         @guest
                             <li class="nav-item{{ currentRoute(route('login')) }}"><a class="nav-link" href="{{ route('login') }}"></i>@lang('SIGN IN')</a></li>
                             @if (Route::has('register'))
@@ -149,6 +149,31 @@
                 <!-- Copyright -->
             </div>
         </footer>
+
+        <div class="player-section" style="display: block;">
+            <div class="spacer"></div>
+            <div class="container">
+                <div class="row">
+
+                    <!-- player pause -->
+                    <div class="col-sm-1">
+                        <a id="pause" href="#" class="btn-custom btn-pause bg-dark hide-text" rel="nofollow" style="display: none;">Pause</a>
+                        <a id="play" href="#" class="btn-custom btn-play bg-dark hide-text" rel="nofollow" style="display: block;">Play</a>
+                    </div>
+                    <!-- waveform -->
+                    <div class="col-sm-9">
+                        <p id="loading" style="display: none">Loading sample ...</p>
+                        <div id="wavesurfer" class="player"></div>
+                    </div>
+                    <!-- waveform -->
+                    <!-- add to cart -->
+                    <div class="col-sm-1">
+                        <a href="#" class="btn-custom btn-add-to-basket hide-text bg-dark" data-link="product-detail" rel="nofollow" data-product-id="2667">Add to basket</a>
+                    </div>
+                    <!-- add to cart -->
+                </div>
+            </div>
+        </div>
     </div>
     <!-- Scripts -->
 

@@ -40,21 +40,32 @@ class CartController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Product $product)
+    public function store($product , Request $request)
     {
+        $status = false;
+        $message = "";
+
+        $product = Product::where('id' , $product)->first();
+
         $duplicates = Cart::search(function ($cartItem, $rowId) use ($product) {
             return $cartItem->id === $product->id;
         });
-        if ($duplicates->isNotEmpty()) {
 
-            Alert::error($product->name .' already in the cart', '');
-            return back();
+        if($duplicates->isEmpty()){
+            $status = true;
+            Cart::add($product->id, $product->name , 1, $product->price)
+                ->associate('App\Models\Product');
+        }else{
+            $message = "The product is already in your cart";
         }
-        Cart::add($product->id, $product->name , 1, $product->price)
-            ->associate('App\Models\Product');
 
-        Alert::success($product->name, 'added to your cart');
-        return back();
+        return response()->json([
+            'status' => $status,
+            'message' => $message,
+            'data' => $product,
+            'items' => Cart::count(),
+        ]);
+
     }
 
     /**
@@ -101,8 +112,7 @@ class CartController extends Controller
     {
         Cart::remove($id);
 
-        Alert::error('The item was removed form your cart', '');
-        return back();
+        return response()->json(['items' => Cart::count()]);
     }
 
 
