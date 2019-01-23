@@ -47,16 +47,16 @@
                                 <td class="text">{{ presentPrice($item->subtotal) }} €</td>
                                 <td class="td-actions text-right">
 
-                                <button id="delete-cart-item" type="button" class="btn btn-danger btn-simple btn-icon btn-sm" data-id="{{ $item->rowId }}"><i class="tim-icons icon-simple-remove"></i></button>
+                                <!--<button id="delete-cart-item" type="button" class="btn btn-danger btn-simple btn-icon btn-sm" data-id="{{ $item->rowId }}"><i class="tim-icons icon-simple-remove"></i></button>-->
 
-                                <!--<form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
-                                        {{ csrf_field() }}
-                                        {{ method_field('DELETE') }}
+                                    <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
 
-                                        <button type="submit" rel="tooltip" class="btn btn-danger btn-simple btn-icon btn-sm">
-                                            <i class="tim-icons icon-simple-remove"></i>
-                                        </button>
-                                    </form>-->
+                                            <button type="submit" rel="tooltip" class="btn btn-danger btn-simple btn-icon btn-sm">
+                                                <i class="tim-icons icon-simple-remove"></i>
+                                            </button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach

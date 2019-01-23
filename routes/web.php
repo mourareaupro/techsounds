@@ -39,7 +39,7 @@ Route::get('/cart', 'CartController@index')->name('cart.index');
 //Route::post('/cart', 'CartController@store')->name('cart.store');
 Route::post('/cart/{product}', 'CartController@store')->name('cart.store');
 Route::patch('/cart/{product}', 'CartController@update')->name('cart.update');
-Route::post('/cart/delete/{product}', 'CartController@destroy')->name('cart.destroy');
+Route::delete('/cart/delete/{product}', 'CartController@destroy')->name('cart.destroy');
 Route::post('/cart/switchToSaveForLater/{product}', 'CartController@switchToSaveForLater')->name('cart.switchToSaveForLater');
 
 //Coupon

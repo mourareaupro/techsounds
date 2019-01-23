@@ -15,6 +15,11 @@
             data: { product_id: product_id , _token: '{{csrf_token()}}' },
             success: function (data) {
                 //update number items
+                $(".flash-cart").css("display", "block").fadeTo(2000, 500).slideUp(500, function(){
+                    $("#flash-cart").slideUp(500);
+                });
+
+                $('#flash_success').html(data.message);
                 $('#cart-items-count').html(data.items);
             },
             error: function (data) {
@@ -36,6 +41,7 @@
             data: { product_id: product_id , _token: '{{csrf_token()}}' },
             success: function (data) {
                 //update number items
+                $(".flash-cart").css("display", "block");
                 $('#cart-items-count').html(data.items);
             },
             error: function (data) {

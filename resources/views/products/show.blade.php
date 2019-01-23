@@ -6,6 +6,21 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+
+                <div class="flash-cart" style="display: none">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                            </div>
+                            <div class="col-sm text-center">
+                                <hr class="line-info">
+                                <h4><span id="flash_success" class="text-white"></span></h4>
+                            </div>
+                            <div class="col-sm">
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 @if (session()->has('success_message'))
                     <div class="alert alert-success">
                         {{ session()->get('success_message') }}
@@ -86,70 +101,8 @@
 
 @section('scripts')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
 
-        $(".player-section").css("display", "none");
-
-        var wavesurfer = WaveSurfer.create({
-            barWidth: 1,
-            container: '#wavesurfer',
-            cursorWidth: 0,
-            dragSelection: true,
-            height: 40,
-            hideScrollbar: true,
-            interact: true,
-            normalize: true,
-            waveColor: '#ffffff',
-            progressColor: '#f4645f'
-        });
-
-        $( "a" ).click(function() {
-
-            var track = $(this).attr("data-url");
-            console.log($(this).attr("data-url"));
-
-            if(track){
-                wavesurfer.load(track);
-                $(".player-section").css("display", "block");
-            }
-        });
-
-        wavesurfer.on('loading', function (percents, eventTarget) {
-            if (percents < 100) {
-                $("#loading").css("display", "block");
-            }else{
-                $("#loading").css("display", "none");
-            }
-        });
-
-        wavesurfer.on('ready', function () {
-            wavesurfer.play();
-            $("#play").css("display", "none");
-            $("#pause").css("display", "block");
-        });
-
-        $('#play').click(function(){
-            if( $(this).hasClass('load') ){
-                $(this).removeClass('load');
-            } else {
-                $(".player-section").css("display", "block");
-                $("#play").css("display", "none");
-                $("#pause").css("display", "block");
-                wavesurfer.play();
-            }
-        });
-
-
-        $('#pause').click(function(){
-            $("#play").css("display", "block");
-            $("#pause").css("display", "none");
-            wavesurfer.pause();
-        });
-
-
-    </script>
-
-
+    @include('products.js.player')
     @include('products.js.ajax-cart')
 @endsection
 

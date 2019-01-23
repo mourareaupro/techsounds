@@ -82,7 +82,7 @@
 @import "blk-design-system/custom/newsletter.scss";
 @import "blk-design-system/custom/player-buttons.scss";
 @import "blk-design-system/custom/player.scss";
-
+@import "blk-design-system/custom/flash_cart.scss";
 // Sections
 @import "blk-design-system/custom/sections.scss";
 
@@ -167,7 +167,6 @@ a {
     margin-bottom: 10px;
     display: none !important;
 }
-
 
 
 .braintree-large-button {

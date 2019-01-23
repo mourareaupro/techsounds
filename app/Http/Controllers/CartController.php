@@ -55,6 +55,7 @@ class CartController extends Controller
             $status = true;
             Cart::add($product->id, $product->name , 1, $product->price)
                 ->associate('App\Models\Product');
+            $message = "The product was successfully added to your cart !";
         }else{
             $message = "The product is already in your cart";
         }
@@ -112,7 +113,8 @@ class CartController extends Controller
     {
         Cart::remove($id);
 
-        return response()->json(['items' => Cart::count()]);
+        return back();
+        //return response()->json(['items' => Cart::count()]);
     }
 
 
