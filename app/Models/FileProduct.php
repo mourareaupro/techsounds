@@ -6,8 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class FileProduct extends Model
 {
-    public function product()
-    {
-        return $this->belongsTo(Product::class);
-    }
+    protected $table = 'file_product';
+
+    protected $fillable = ['product_id', 'path', 'file_name'];
 }
