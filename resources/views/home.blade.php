@@ -2,6 +2,22 @@
 
 @section('content')
 
+    <!-- flash -->
+    <div class="flash-cart" style="display: none">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                </div>
+                <div class="col-sm text-center">
+                    <hr class="line-info">
+                    <h4><span id="flash_success" class="text-white"></span></h4>
+                </div>
+                <div class="col-sm">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- flash -->
 
     <div class="page-header">
         <img src="{{asset('img/blob.png')}}" class="path">
@@ -24,12 +40,7 @@
                                 </button>
                             </form>
                         @else
-                            <form action="{{route('cart.store' , $featured_product->id)}}" method="post">
-                                {{ csrf_field() }}
-                                <button type="submit" class="btn btn-info btn-round btn-lg text-center">
-                                    <i class="tim-icons icon-simple-add"></i> Add to cart
-                                </button>
-                            </form>
+                            <button id="add-to-cart" type="button" class="btn btn-info btn-round btn-lg text-center pull-right" data-id="{{ $featured_product->id }}"><i class="tim-icons icon-simple-add"></i> Add to cart</button>
                         @endif
                     </div>
                 </div>
@@ -107,31 +118,28 @@
                 <div class="card">
                     <!--<img class="card-img-top" src="{{ productImage($product->image) }}" alt="Card image cap">-->
 
+                    <div class="img">
                         <img class="card-img-top" src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg" alt="Card image cap">
 
                         <div class="card-img-overlay text-center">
-                            <button type="submit" class="btn btn-info btn-round btn-lg text-center">
-                                <i class="tim-icons icon-simple-add"></i> Add to cart
-                            </button>
+                            <button id="add-to-cart-{{$product->id}}" type="button" class="btn btn-info btn-round btn-lg text-center" data-id="{{ $product->id }}"><i class="tim-icons icon-simple-add"></i> Add to cart</button>
                         </div>
+                    </div>
 
                     <div class="card-body">
                         <hr class="line-info">
-                        <h4 class="card-title"><a href="{{route('product.show' , $product->slug)}}"><span class="text-white">{{$product->name}}</span></a><span class="text pull-right"><i class="tim-icons icon-cloud-download-93 text-info"></i> {{$product->downloads}}</span></h4>
-
-                        <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-                        <!-- form add to cart -->
-                        <div class="form-row text-center">
-                            <div class="col-12">
-                                <form action="{{route('cart.store' , $product)}}" method="post">
-                                    {{ csrf_field() }}
-                                    <button type="submit" class="btn btn-info btn-round btn-lg text-center">
-                                        <i class="tim-icons icon-simple-add"></i> Add to cart
-                                    </button>
-
-                                </form>
-                            </div>
-                        </div><!-- end form -->
+                        <a href="{{route('product.show' , $product->slug)}}">
+                            <h4 class="card-title">
+                                <span class="text-white">{{$product->name}}</span>
+                                <span class="text pull-right">
+                                    <i class="tim-icons icon-cloud-download-93 text-info"></i>
+                                    {{$product->downloads}}
+                                </span>
+                            </h4>
+                        </a>
+                        <p class="product-price">
+                            {{presentPrice($product->price)}} €
+                        </p>
                     </div>
                 </div>
             </div>
@@ -144,10 +152,7 @@
 @section('scripts')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-
-        //$(".player-section").css("display", "none");
-
-        var wavesurfer = WaveSurfer.create({
+            var wavesurfer = WaveSurfer.create({
             barWidth: 1,
             container: '#wavesurfer',
             cursorWidth: 0,
@@ -181,6 +186,34 @@
                 wavesurfer.pause();
         });
 
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $('button[id^="add-to-cart"]').click( function() {
+            var product_id = $(this).data('id');
+            var url= '../public/cart/' + product_id;
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: { product_id: product_id , _token: '{{csrf_token()}}' },
+                success: function (data) {
+                    //update number items
+                    $(".flash-cart").css("display", "block").fadeTo(2000, 500).slideUp(500, function(){
+                        $("#flash-cart").slideUp(500);
+                    });
+
+                    $('#flash_success').html(data.message);
+                    $('#cart-items-count').html(data.items);
+                },
+                error: function (data) {
+                    console.log('Error:', data);
+                }
+            });
+        });
 
     </script>
 @endsection
