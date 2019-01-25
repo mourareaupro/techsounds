@@ -1,0 +1,56 @@
+.track {
+    position: relative;
+    max-width: 250px;
+}
+
+
+.track .img {
+    height: 300px;
+    display: table;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.track .img .img-middle {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    max-width: 250px;
+}
+
+.track p.product-title {
+    line-height: 15px;
+}
+
+.track p {
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.track h3, .track p {
+    margin: 0;
+    padding: 0 10px 2px;
+    font-size: 13px;
+    line-height: 15px;
+}
+
+.track ul {
+    position: absolute;
+    width: 118px;
+    height: 152px;
+    left: 50%;
+    top: 19px;
+    margin-left: -59px;
+    display: none;
+}
+
+.track li a {
+    float: left;
+    margin: 0 0 2px;
+    padding: 0;
+    //background: url(../img/track-btns.gif) -10px -8px no-repeat #fff;
+    height: 58px;
+    width: 58px;
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.1);
+    box-shadow: 0 0 0 1px rgba(0,0,0,.1);
+}

@@ -167,9 +167,14 @@
 
 
 .card-img-overlay{
-    display: none;
+    top: 15%;
+    opacity: 0;
 }
 
 .img:hover .card-img-overlay {
-    display: block;
+    opacity: 1;
 }
+
+
+
+

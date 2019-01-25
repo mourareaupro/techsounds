@@ -51,7 +51,7 @@
 
 
 
-                <!--<div class="col-lg-12">
+                <div class="col-lg-12">
                     <div class="card card-stats ">
                         <div class="card-body">
                             <div class="row">
@@ -60,17 +60,10 @@
                                         <i class="tim-icons icon-cloud-download-93 text-info"></i>
                                     </div>
                                 </div>
-                                <div class="col-7 col-md-8">
-                                    <div class="numbers">
-                                        <p class="card-title"><i class="tim-icons icon-cloud-download-93 text-info"></i><span class="counter-count"> {{$products->sum('downloads')}}</span></p>
-                                        </p><p>
-                                        </p><p class="card-category">Downloads</p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
-                </div>-->
+                </div>
             </div>
             <!-- featured product -->
         </div>
@@ -110,21 +103,22 @@
     </div>
 
 
+
     <!-- products list -->
     <div class="container">
         <div class="row">
             @foreach($products as $product)
             <div class="col-sm-4">
-                <div class="card">
+                <!--<div class="card">
                     <!--<img class="card-img-top" src="{{ productImage($product->image) }}" alt="Card image cap">-->
 
-                    <div class="img">
+                    <!--<div class="img">
                         <img class="card-img-top" src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg" alt="Card image cap">
-
-                        <div class="card-img-overlay text-center">
-                            <button id="add-to-cart-{{$product->id}}" type="button" class="btn btn-info btn-round btn-lg text-center" data-id="{{ $product->id }}"><i class="tim-icons icon-simple-add"></i> Add to cart</button>
+                        <div class="card-img-overlay  d-flex flex-column justify-content-top">
+                                <button id="add-to-cart-{{$product->id}}" type="button" class="btn btn-info btn-lg text-center" data-id="{{ $product->id }}"><i class="icon-big tim-icons icon-cart"></i></button>
                         </div>
                     </div>
+
 
                     <div class="card-body">
                         <hr class="line-info">
@@ -141,7 +135,36 @@
                             {{presentPrice($product->price)}} €
                         </p>
                     </div>
-                </div>
+                </div>-->
+
+
+                    <div class="track  ">
+                        <div class="img">
+                            <div class="img-middle">
+                                <a href="https://www.samplemagic.com/details/2672/dusty-and-dirty-tops" data-link="product-detail">
+                                    <img src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg" alt="Dusty and Dirty Tops">
+                                </a>
+                            </div>
+                        </div>
+
+                        <p class="product-title">
+                            <a href="https://www.samplemagic.com/details/2672/dusty-and-dirty-tops" data-link="product-detail">Dusty and Dirty Tops</a>
+                        </p>
+
+
+
+                        <p class="product-price">
+                            <span class="sale green">€14.92</span>
+                            €10.44
+                        </p>
+                        <ul>
+                            <li>
+                                <a href="https://www.samplemagic.com/audio/samples/SM101 - Dusty &amp; Dirty Tops - Full Demo.mp3" class="btn-preview hide-text" data-link="product-sample" data-sampleid="4361" data-productid="2672">Preview</a>
+                            </li>
+                            <li><a href="https://www.samplemagic.com/details/2672/dusty-and-dirty-tops" class="btn-add-to-basket hide-text" data-product-id="2672">Add to basket</a></li>
+                            <li><a href="https://www.samplemagic.com/details/2672/dusty-and-dirty-tops" class="btn-info hide-text" data-link="product-detail">Information</a></li>
+                        </ul>
+                    </div>
             </div>
             @endforeach
         </div><!-- row-->
