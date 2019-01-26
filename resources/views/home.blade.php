@@ -41,8 +41,19 @@
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-5">
-                    <!--<img src="{{asset('img/etherum.png')}}" alt="Circle image" class="img-fluid">-->
-                        <img src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg" alt="Circle image" class="img-fluid">
+                    <div class="work-container">
+                        <div class="work-img">
+                            <a href="https://www.sampletoolsbycr2.com/product/dirty-house-2/">
+                                <img width="500" height="300" src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg"></a>
+                            <div class="portfolio-overlay">
+                                <div class="project-icons">
+                                    <a href="{{route('product.show' , $featured_product->slug)}}"><i class="fa fa-info"></i></a>
+                                    <a class="play" data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-product-id="#" data-audio="#"><i class="fa fa-play"></i></a>
+                                    <a id="add-to-cart-{{ $featured_product->id }}" data-id="{{ $featured_product->id }}"><i class="fa fa-shopping-cart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- featured product -->
@@ -98,7 +109,7 @@
                             <div class="portfolio-overlay">
                                 <div class="project-icons">
                                     <a href="{{route('product.show' , $product->slug)}}"><i class="fa fa-info"></i></a>
-                                    <a class="play" data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-product-id="#" data-audio="#"><i class="fa fa-play"></i></a>
+                                    <a class="play" data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-link="product-sample" data-sampleid="4362" data-productid="{{$product->id}}"><i class="fa fa-play"></i></a>
                                     <a id="add-to-cart-{{ $product->id }}" data-id="{{ $product->id }}"><i class="fa fa-shopping-cart"></i></a>
                                 </div>
                             </div>
@@ -122,8 +133,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
 
-        $(".player-section").css("display", "none");
-
         var wavesurfer = WaveSurfer.create({
             barWidth: 1,
             container: '#wavesurfer',
@@ -140,7 +149,11 @@
         $( '.play' ).click(function() {
 
             var track = $(this).attr("data-url");
-            console.log($(this).attr("data-url"));
+            var product = $(this).attr("data-productid");
+
+            if(product){
+                $('#cart-player').attr('data-product-id', product);
+            }
 
             if(track){
                 wavesurfer.load(track);
@@ -202,12 +215,39 @@
 
                     $('#flash_success').html(data.message);
                     $('#cart-items-count').html(data.items);
+                    $('#cart-total').html(data.total);
                 },
                 error: function (data) {
                     console.log('Error:', data);
                 }
             });
         });
+
+
+        $('a[id^="cart-player"]').click( function() {
+            var product_id = $(this).attr('data-product-id');
+            var url= '../public/cart/' + product_id;
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: { product_id: product_id , _token: '{{csrf_token()}}' },
+                success: function (data) {
+                    //update number items
+                    $(".flash-cart").css("display", "block").fadeTo(2000, 500).slideUp(500, function(){
+                        $("#flash-cart").slideUp(500);
+                    });
+
+                    $('#flash_success').html(data.message);
+                    $('#cart-items-count').html(data.items);
+                    $('#cart-total').html(data.total);
+                },
+                error: function (data) {
+                    console.log('Error:', data);
+                }
+            });
+        });
+    </script>
 
     </script>
 @endsection

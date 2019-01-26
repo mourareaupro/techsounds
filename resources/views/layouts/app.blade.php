@@ -68,7 +68,7 @@
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Authentication Links -->
-                        <li class="nav-item{{ currentRoute(route('cart.index')) }}"><a class="nav-link" href="{{ route('cart.index') }}"><i class="tim-icons icon-cart"></i><span id="cart-items-count" class="badge badge-pill badge-primary">{{ Cart::count() }} </span><p class="text-white" style="padding-left: 10px"> {{presentPrice(Cart::subtotal())}}</p></a></li>
+                        <li class="nav-item{{ currentRoute(route('cart.index')) }}"><a class="nav-link" href="{{ route('cart.index') }}"><i class="tim-icons icon-cart"></i><span id="cart-items-count" class="badge badge-pill badge-primary">{{ Cart::count() }} </span><span id="cart-total" class="text-white" style="padding-left: 10px"> {{presentPrice(Cart::subtotal())}}</span></a></li>
                         @guest
                             <li class="nav-item{{ currentRoute(route('login')) }}"><a class="nav-link" href="{{ route('login') }}"></i>@lang('SIGN IN')</a></li>
                             @if (Route::has('register'))
@@ -150,7 +150,7 @@
             </div>
         </footer>
 
-        <div class="player-section" style="display: block;">
+        <div class="player-section" style="display: none;">
             <div class="spacer"></div>
             <div class="container">
                 <div class="row">
@@ -168,7 +168,7 @@
                     <!-- waveform -->
                     <!-- add to cart -->
                     <div class="col-sm-1">
-                        <a class="btn-custom btn-add-to-basket hide-text bg-dark" data-link="product-detail" rel="nofollow" data-product-id="2667">Add to basket</a>
+                        <a id="cart-player" class="btn-custom btn-add-to-basket hide-text bg-dark" data-link="product-detail" rel="nofollow" data-product-id="2667">Add to basket</a>
                     </div>
                     <!-- add to cart -->
                 </div>

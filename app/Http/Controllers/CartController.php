@@ -65,6 +65,7 @@ class CartController extends Controller
             'message' => $message,
             'data' => $product,
             'items' => Cart::count(),
+            'total' => presentPrice(Cart::subtotal()),
         ]);
 
     }

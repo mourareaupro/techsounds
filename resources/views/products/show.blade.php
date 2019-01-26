@@ -63,7 +63,7 @@
                 <div class="demo">
                     <ul>
                         <li>
-                            <a class="btn-play bg-dark hide-text" data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-link="product-sample" data-sampleid="4362" data-productid="2671">Play</a>
+                            <a class="btn-play bg-dark hide-text" data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-link="product-sample" data-sampleid="4362" data-productid="{{$product->id}}">Play</a>
                             Full Demo
                         </li>
                         <li>

@@ -1,7 +1,5 @@
 <script>
 
-    $(".player-section").css("display", "none");
-
     var wavesurfer = WaveSurfer.create({
         barWidth: 1,
         container: '#wavesurfer',
