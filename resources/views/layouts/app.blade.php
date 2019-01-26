@@ -150,27 +150,35 @@
             </div>
         </footer>
 
-        <div class="player-section" style="display: none;">
+        <div class="player-section" style="display: block;">
             <div class="spacer"></div>
             <div class="container">
                 <div class="row">
 
                     <!-- player pause -->
                     <div class="col-sm-1">
-                        <a id="pause" class="btn-custom btn-pause bg-dark hide-text" rel="nofollow" style="display: none;">Pause</a>
-                        <a id="play" class="btn-custom btn-play bg-dark hide-text" rel="nofollow" style="display: block;">Play</a>
+                        <a id="pause" rel="nofollow" style="display: none;"><i class="fas fa-pause"></i></a>
+                        <a id="play" rel="nofollow" style="display: block;"><i class="fas fa-play"></i></a>
                     </div>
                     <!-- waveform -->
                     <div class="col-sm-9">
-                        <p id="loading" style="display: none">Loading sample ...</p>
+                        <p id="loading" class="text-info" style="display: none">Loading sample ...</p>
                         <div id="wavesurfer" class="player"></div>
                     </div>
                     <!-- waveform -->
                     <!-- add to cart -->
                     <div class="col-sm-1">
-                        <a id="cart-player" class="btn-custom btn-add-to-basket hide-text bg-dark" data-link="product-detail" rel="nofollow" data-product-id="2667">Add to basket</a>
+                        <a id="cart-player" data-link="product-detail" rel="nofollow" data-product-id="2667"><i class="fas fa-shopping-cart"></i></a>
                     </div>
                     <!-- add to cart -->
+
+
+                    <div class="col-sm-1">
+                        <div class="volume">
+                            <a class="volume-button"><i class="fas fa-volume-up"></i></a>
+                            <input type="range" id="volume-slider" class="volume-slider" min="0" max="100" step="1" value="50" style="display: none">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

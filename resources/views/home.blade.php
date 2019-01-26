@@ -44,7 +44,7 @@
                     <div class="work-container">
                         <div class="work-img">
                             <a href="https://www.sampletoolsbycr2.com/product/dirty-house-2/">
-                                <img width="500" height="300" src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg"></a>
+                                <img width="500" height="340" src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg"></a>
                             <div class="portfolio-overlay">
                                 <div class="project-icons">
                                     <a href="{{route('product.show' , $featured_product->slug)}}"><i class="fa fa-info"></i></a>
@@ -105,10 +105,10 @@
                     <div class="work-container">
                         <div class="work-img">
                             <a href="https://www.sampletoolsbycr2.com/product/dirty-house-2/">
-                                <img width="500" height="320" src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg"></a>
+                                <img height="340" src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg"></a>
                             <div class="portfolio-overlay">
                                 <div class="project-icons">
-                                    <a id="product-route" data-href="{{route('product.show' , $product->slug)}}"><i class="fa fa-info"></i></a>
+                                    <a id="product-route" href="{{route('product.show' , $product->slug)}}" data-id="{{ $product->id }}"><i class="fa fa-info"></i></a>
                                     <a class="play" data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-link="product-sample" data-sampleid="4362" data-productid="{{$product->id}}"><i class="fa fa-play"></i></a>
                                     <a id="add-to-cart-{{ $product->id }}" data-id="{{ $product->id }}"><i class="fa fa-shopping-cart"></i></a>
                                 </div>
@@ -139,6 +139,7 @@
             cursorWidth: 0,
             dragSelection: true,
             height: 40,
+            top:20,
             hideScrollbar: true,
             interact: true,
             normalize: true,
@@ -173,6 +174,8 @@
             wavesurfer.play();
             $("#play").css("display", "none");
             $("#pause").css("display", "block");
+
+            wavesurfer.setVolume($('#volume-slider').val() / 100);
         });
 
         $('#play').click(function(){
@@ -191,6 +194,17 @@
             $("#play").css("display", "block");
             $("#pause").css("display", "none");
             wavesurfer.pause();
+        });
+
+
+        $('#volume-slider').on('input change', function() {
+            wavesurfer.setVolume($('#volume-slider').val() / 100);
+            if(parseInt($('#volume-slider').val()) == 0) {
+                wavesurfer.setMute(true);
+            }
+            else {
+                wavesurfer.setMute(false);
+            }
         });
 
         $.ajaxSetup({
@@ -250,22 +264,23 @@
 
 
 
-        $('a[id^="product-route"]').click( function() {
-            var href = $(this).attr('data-href');
-            console.log(href);
-
-            $.ajax({
-                type: "GET",
-                url: href,
-                data: { href: href , _token: '{{csrf_token()}}' },
-                success: function (data) {
-                    $("#container").load(data);
-                },
-                error: function (data) {
-                    console.log('Error:', data);
-                }
-            });
-
-        });
+        // $('a[id^="product-route"]').click( function() {
+        //     var product_id = $(this).attr('data-id');
+        //
+        //     $.ajax({
+        //         type: "GET",
+        //         url: '../public/ajax/product/' + product_id,
+        //         data: { product_id: product_id },
+        //         success: function (data) {
+        //
+        //             console.log('sucess');
+        //             $('.container').html(data.html);
+        //         },
+        //         error: function (data) {
+        //             console.log('Error:', data);
+        //         }
+        //     });
+        //
+        // });
     </script>
 @endsection

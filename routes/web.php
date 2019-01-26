@@ -72,6 +72,7 @@ Route::middleware('auth')->group(function () {
 Route::get('products' , 'ProductController@index')->name('product.index');
 Route::get('product/{slug}' , 'ProductController@show')->name('product.show');
 Route::get('download/{product}' , 'ProductController@download')->name('product.download');
+Route::get('ajax/product/{id}' , 'ProductController@getAjaxProduct');
 
 
 //Free download

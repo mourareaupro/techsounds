@@ -168,4 +168,14 @@ class ProductController extends Controller
             return back();
         }
     }
+
+
+    public function getAjaxProduct(Request $request, $id){
+
+        $product = Product::where('id', $id)->firstOrFail();
+
+        $view = view('products.ajaxView',compact('product'))->render();
+
+        return response()->json(['html'=>$view]);
+    }
 }
