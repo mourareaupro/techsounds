@@ -2,22 +2,18 @@
 
 @section('content')
 
-    <!-- flash -->
     <div class="flash-cart" style="display: none">
         <div class="container">
             <div class="row">
-                <div class="col-sm">
-                </div>
-                <div class="col-sm text-center">
+                <div class="col-sm align-content-center">
                     <hr class="line-info">
-                    <h4><span id="flash_success" class="text-white"></span></h4>
-                </div>
-                <div class="col-sm">
+                    <h4><span id="flash_success" class="text-white"></span>
+                        <a href="{{route('cart.index')}}" class="btn btn-info btn-round pull-right">View basket</a>
+                    </h4>
                 </div>
             </div>
         </div>
     </div>
-    <!-- flash -->
 
     <div class="page-header">
         <img src="{{asset('img/blob.png')}}" class="path">
@@ -48,26 +44,12 @@
                     <!--<img src="{{asset('img/etherum.png')}}" alt="Circle image" class="img-fluid">-->
                         <img src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg" alt="Circle image" class="img-fluid">
                 </div>
-
-
-
-                <div class="col-lg-12">
-                    <div class="card card-stats ">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-5 col-md-4">
-                                    <div class="icon-big text-center icon-warning">
-                                        <i class="tim-icons icon-cloud-download-93 text-info"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <!-- featured product -->
         </div>
     </div><!-- page header -->
+
+    <div class="spacer"></div>
 
     <div class="container">
         <div class="row">
@@ -93,7 +75,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <hr class="line-info">
-                        <h1>Samples
+                        <h1>New releases
                             <span class="text-info">+</span>
                         </h1>
                     </div>
@@ -108,62 +90,26 @@
     <div class="container">
         <div class="row">
             @foreach($products as $product)
-            <div class="col-sm-4">
-                <!--<div class="card">
-                    <!--<img class="card-img-top" src="{{ productImage($product->image) }}" alt="Card image cap">-->
-
-                    <!--<div class="img">
-                        <img class="card-img-top" src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg" alt="Card image cap">
-                        <div class="card-img-overlay  d-flex flex-column justify-content-top">
-                                <button id="add-to-cart-{{$product->id}}" type="button" class="btn btn-info btn-lg text-center" data-id="{{ $product->id }}"><i class="icon-big tim-icons icon-cart"></i></button>
-                        </div>
-                    </div>
-
-
-                    <div class="card-body">
-                        <hr class="line-info">
-                        <a href="{{route('product.show' , $product->slug)}}">
-                            <h4 class="card-title">
-                                <span class="text-white">{{$product->name}}</span>
-                                <span class="text pull-right">
-                                    <i class="tim-icons icon-cloud-download-93 text-info"></i>
-                                    {{$product->downloads}}
-                                </span>
-                            </h4>
-                        </a>
-                        <p class="product-price">
-                            {{presentPrice($product->price)}} €
-                        </p>
-                    </div>
-                </div>-->
-
-
-                    <div class="track  ">
-                        <div class="img">
-                            <div class="img-middle">
-                                <a href="https://www.samplemagic.com/details/2672/dusty-and-dirty-tops" data-link="product-detail">
-                                    <img src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg" alt="Dusty and Dirty Tops">
-                                </a>
+            <div class="col-xs-6 col-sm-4 col-md-15 work-item">
+                    <div class="work-container">
+                        <div class="work-img">
+                            <a href="https://www.sampletoolsbycr2.com/product/dirty-house-2/">
+                                <img width="500" height="320" src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg"></a>
+                            <div class="portfolio-overlay">
+                                <div class="project-icons">
+                                    <a href="{{route('product.show' , $product->slug)}}"><i class="fa fa-info"></i></a>
+                                    <a class="play" data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-product-id="#" data-audio="#"><i class="fa fa-play"></i></a>
+                                    <a id="add-to-cart-{{ $product->id }}" data-id="{{ $product->id }}"><i class="fa fa-shopping-cart"></i></a>
+                                </div>
                             </div>
                         </div>
+                        <div class="work-description">
+                            <hr class="line-info">
+                            <h4><a href="{{route('product.show' , $product->slug)}}">{{$product->name}}</a><span class="text-white card-price pull-right">
+                                {{presentPrice($product->price)}}
+                            </span></h4>
 
-                        <p class="product-title">
-                            <a href="https://www.samplemagic.com/details/2672/dusty-and-dirty-tops" data-link="product-detail">Dusty and Dirty Tops</a>
-                        </p>
-
-
-
-                        <p class="product-price">
-                            <span class="sale green">€14.92</span>
-                            €10.44
-                        </p>
-                        <ul>
-                            <li>
-                                <a href="https://www.samplemagic.com/audio/samples/SM101 - Dusty &amp; Dirty Tops - Full Demo.mp3" class="btn-preview hide-text" data-link="product-sample" data-sampleid="4361" data-productid="2672">Preview</a>
-                            </li>
-                            <li><a href="https://www.samplemagic.com/details/2672/dusty-and-dirty-tops" class="btn-add-to-basket hide-text" data-product-id="2672">Add to basket</a></li>
-                            <li><a href="https://www.samplemagic.com/details/2672/dusty-and-dirty-tops" class="btn-info hide-text" data-link="product-detail">Information</a></li>
-                        </ul>
+                        </div>
                     </div>
             </div>
             @endforeach
@@ -175,7 +121,10 @@
 @section('scripts')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-            var wavesurfer = WaveSurfer.create({
+
+        $(".player-section").css("display", "none");
+
+        var wavesurfer = WaveSurfer.create({
             barWidth: 1,
             container: '#wavesurfer',
             cursorWidth: 0,
@@ -188,12 +137,34 @@
             progressColor: '#f4645f'
         });
 
-        wavesurfer.load('https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3');
+        $( '.play' ).click(function() {
+
+            var track = $(this).attr("data-url");
+            console.log($(this).attr("data-url"));
+
+            if(track){
+                wavesurfer.load(track);
+                $(".player-section").css("display", "block");
+            }
+        });
+
+        wavesurfer.on('loading', function (percents, eventTarget) {
+            if (percents < 100) {
+                $("#loading").css("display", "block");
+            }else{
+                $("#loading").css("display", "none");
+            }
+        });
+
+        wavesurfer.on('ready', function () {
+            wavesurfer.play();
+            $("#play").css("display", "none");
+            $("#pause").css("display", "block");
+        });
 
         $('#play').click(function(){
             if( $(this).hasClass('load') ){
                 $(this).removeClass('load');
-                wavesurfer.load('https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3');
             } else {
                 $(".player-section").css("display", "block");
                 $("#play").css("display", "none");
@@ -204,9 +175,9 @@
 
 
         $('#pause').click(function(){
-                $("#play").css("display", "block");
-                $("#pause").css("display", "none");
-                wavesurfer.pause();
+            $("#play").css("display", "block");
+            $("#pause").css("display", "none");
+            wavesurfer.pause();
         });
 
         $.ajaxSetup({
@@ -215,7 +186,7 @@
             }
         });
 
-        $('button[id^="add-to-cart"]').click( function() {
+        $('a[id^="add-to-cart"]').click( function() {
             var product_id = $(this).data('id');
             var url= '../public/cart/' + product_id;
 

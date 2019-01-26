@@ -42,9 +42,9 @@
                             <tbody>
                             @foreach (Cart::content() as $item)
                             <tr>
-                                <td><img class="checkout-table-img" src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg" alt="Card image cap"></td>
-                                <td>{{ $item->model->name }}</td>
-                                <td class="text">{{ presentPrice($item->subtotal) }} €</td>
+                                <td><a href="{{route('product.show' , $item->model->slug)}}"><img class="checkout-table-img" src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg" alt="Card image cap"></a></td>
+                                <td><a href="{{route('product.show' , $item->model->slug)}}" class="text-white">{{ $item->model->name }}</a></td>
+                                <td class="text">{{ presentPrice($item->subtotal) }}</td>
                                 <td class="td-actions text-right">
 
                                 <!--<button id="delete-cart-item" type="button" class="btn btn-danger btn-simple btn-icon btn-sm" data-id="{{ $item->rowId }}"><i class="tim-icons icon-simple-remove"></i></button>-->
@@ -111,8 +111,8 @@
                                     <hr>
                                     {{ presentPrice($newSubtotal) }} <br>
                                 @endif
-                                {{ presentPrice($newTax) }} €<br>
-                                <span class="cart-totals-total">{{ presentPrice($newTotal) }} €</span>
+                                {{ presentPrice($newTax) }}<br>
+                                <span class="cart-totals-total">{{ presentPrice($newTotal) }}</span>
                             </div>
                         </div>
 

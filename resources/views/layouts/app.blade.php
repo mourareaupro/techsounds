@@ -68,7 +68,7 @@
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Authentication Links -->
-                        <li class="nav-item{{ currentRoute(route('cart.index')) }}"><a class="nav-link" href="{{ route('cart.index') }}"><i class="tim-icons icon-cart"></i><span id="cart-items-count" class="badge badge-pill badge-primary">{{ Cart::count() }}</span></a></li>
+                        <li class="nav-item{{ currentRoute(route('cart.index')) }}"><a class="nav-link" href="{{ route('cart.index') }}"><i class="tim-icons icon-cart"></i><span id="cart-items-count" class="badge badge-pill badge-primary">{{ Cart::count() }} </span><p class="text-white" style="padding-left: 10px"> {{presentPrice(Cart::subtotal())}}</p></a></li>
                         @guest
                             <li class="nav-item{{ currentRoute(route('login')) }}"><a class="nav-link" href="{{ route('login') }}"></i>@lang('SIGN IN')</a></li>
                             @if (Route::has('register'))
@@ -157,8 +157,8 @@
 
                     <!-- player pause -->
                     <div class="col-sm-1">
-                        <a id="pause" href="#" class="btn-custom btn-pause bg-dark hide-text" rel="nofollow" style="display: none;">Pause</a>
-                        <a id="play" href="#" class="btn-custom btn-play bg-dark hide-text" rel="nofollow" style="display: block;">Play</a>
+                        <a id="pause" class="btn-custom btn-pause bg-dark hide-text" rel="nofollow" style="display: none;">Pause</a>
+                        <a id="play" class="btn-custom btn-play bg-dark hide-text" rel="nofollow" style="display: block;">Play</a>
                     </div>
                     <!-- waveform -->
                     <div class="col-sm-9">
@@ -168,7 +168,7 @@
                     <!-- waveform -->
                     <!-- add to cart -->
                     <div class="col-sm-1">
-                        <a href="#" class="btn-custom btn-add-to-basket hide-text bg-dark" data-link="product-detail" rel="nofollow" data-product-id="2667">Add to basket</a>
+                        <a class="btn-custom btn-add-to-basket hide-text bg-dark" data-link="product-detail" rel="nofollow" data-product-id="2667">Add to basket</a>
                     </div>
                     <!-- add to cart -->
                 </div>
