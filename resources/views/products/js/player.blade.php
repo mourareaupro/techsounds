@@ -16,7 +16,11 @@
     $( "a" ).click(function() {
 
         var track = $(this).attr("data-url");
-        console.log($(this).attr("data-url"));
+        var product = $(this).attr("data-productid");
+
+        if(product){
+            $('#cart-player').attr('data-product-id', product);
+        }
 
         if(track){
             wavesurfer.load(track);

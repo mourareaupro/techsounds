@@ -50,4 +50,28 @@
         });
     });
 
+    $('a[id^="cart-player"]').click( function() {
+        var product_id = $(this).attr('data-product-id');
+        var url= '../cart/' + product_id;
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: { product_id: product_id , _token: '{{csrf_token()}}' },
+            success: function (data) {
+                //update number items
+                $(".flash-cart").css("display", "block").fadeTo(2000, 500).slideUp(500, function(){
+                    $("#flash-cart").slideUp(500);
+                });
+
+                $('#flash_success').html(data.message);
+                $('#cart-items-count').html(data.items);
+                $('#cart-total').html(data.total);
+            },
+            error: function (data) {
+                console.log('Error:', data);
+            }
+        });
+    });
+
 </script>
