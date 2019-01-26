@@ -105,7 +105,7 @@
                                 <span class="cart-totals-total">Total</span>
                             </div>
                             <div class="cart-totals-subtotal">
-                                {{ presentPrice(Cart::subtotal()) }} €<br>
+                                {{ presentPrice(Cart::subtotal()) }}<br>
                                 @if (session()->has('coupon'))
                                     -{{ presentPrice($discount) }} <br>&nbsp;<br>
                                     <hr>

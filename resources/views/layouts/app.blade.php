@@ -150,7 +150,7 @@
             </div>
         </footer>
 
-        <div class="player-section" style="display: block;">
+        <div class="player-section" style="display: none;">
             <div class="spacer"></div>
             <div class="container">
                 <div class="row">
@@ -173,11 +173,12 @@
                     <!-- add to cart -->
 
 
-                    <div class="col-sm-1">
-                        <div class="volume">
-                            <a class="volume-button"><i class="fas fa-volume-up"></i></a>
-                            <input type="range" id="volume-slider" class="volume-slider" min="0" max="100" step="1" value="50" style="display: none">
+                    <div class="col-sm-1 volume d-inline">
+                        <a class="volume-button"><i class="fas fa-volume-up"></i></a>
+                        <div class="volume-drop">
+                            <input type="range" id="volume-slider" orient="vertical" class="volume-drop-range" min="0" max="100" step="1" value="50">
                         </div>
+
                     </div>
                 </div>
             </div>

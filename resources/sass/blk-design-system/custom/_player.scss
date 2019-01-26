@@ -90,19 +90,61 @@
 
 .volume-drop {
     box-sizing: border-box;
-    left: -webkit-calc(50% - 18px);
-    left: -moz-calc(50% - 18px);
-    left: calc(50% - 18px);
     display: none;
     opacity: 0;
     border-radius: 3px;
     position: absolute;
     bottom: -15px;
     margin: 0;
-    padding: 15px 15px 50px 12px;
+    padding: 20px 20px 20px 60px;
     background: #000;
-    border: 1px solid #333;
     text-align: center;
     transition: opacity .2s;
     z-index: 9;
+    border: 1px solid #333;
+}
+
+.volume-drop-range {
+    writing-mode: bt-lr;
+    -webkit-appearance: slider-vertical;
+    position: relative;
+    width: 8px;
+    height: 150px;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+.player-section .volume:hover .volume-drop {
+
+    display: block;
+    opacity: 1;
+}
+
+.player-section .volume:hover i {
+
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    margin: 0 3px;
+    line-height: 50px;
+    text-align: center;
+    color: #ffffff !important;
+    background-color: #000000;
+    border-radius: 100px;
+    background-size: 100% 100%;
+    border-radius: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+input[type=range]::-moz-range-track {
+    background-color: #f4645f;
+}
+
+
+.player-section i:hover {
+    background-color: #f4645f;
 }

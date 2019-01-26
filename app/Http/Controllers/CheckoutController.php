@@ -162,7 +162,7 @@ class CheckoutController extends Controller
         $order = Order::create([
             'user_id' => auth()->user() ? auth()->user()->id : null,
             'order_number' => $order_number,
-            'billing_email' => $request->email,
+            'billing_email' => auth()->user()->email,
             'billing_name' => $request->name,
             'billing_address' => $request->address,
             'billing_city' => $request->city,
