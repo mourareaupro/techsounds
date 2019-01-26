@@ -108,7 +108,7 @@
                                 <img width="500" height="320" src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg"></a>
                             <div class="portfolio-overlay">
                                 <div class="project-icons">
-                                    <a href="{{route('product.show' , $product->slug)}}"><i class="fa fa-info"></i></a>
+                                    <a id="product-route" data-href="{{route('product.show' , $product->slug)}}"><i class="fa fa-info"></i></a>
                                     <a class="play" data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-link="product-sample" data-sampleid="4362" data-productid="{{$product->id}}"><i class="fa fa-play"></i></a>
                                     <a id="add-to-cart-{{ $product->id }}" data-id="{{ $product->id }}"><i class="fa fa-shopping-cart"></i></a>
                                 </div>
@@ -247,7 +247,25 @@
                 }
             });
         });
-    </script>
 
+
+
+        $('a[id^="product-route"]').click( function() {
+            var href = $(this).attr('data-href');
+            console.log(href);
+
+            $.ajax({
+                type: "GET",
+                url: href,
+                data: { href: href , _token: '{{csrf_token()}}' },
+                success: function (data) {
+                    $("#container").load(data);
+                },
+                error: function (data) {
+                    console.log('Error:', data);
+                }
+            });
+
+        });
     </script>
 @endsection

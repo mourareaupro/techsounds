@@ -49,7 +49,7 @@
             <!-- product title and descirption -->
             <div class="col-sm-8"><hr class="line-info">
                 <h1>{{$product->name}}
-                    <span class="text-info">+</span>
+                    <span class="text-info">+</span> <span class="pull-right">{{presentPrice($product->price)}}</span>
                 </h1>
                 <p class="text-white">{{$product->description}}</p>
             </div>
