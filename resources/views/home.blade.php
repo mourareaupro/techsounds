@@ -81,9 +81,13 @@
                                             </div>
                                             <div class="work-description">
                                                 <hr class="line-info">
-                                                <h4><a href="{{route('product.show' , $product->slug)}}">{{$product->name}}</a><span class="text-white card-price pull-right">
-                                                    {{presentPrice($product->price)}}
-                                            </span>
+                                                <h4 class="pull-left">
+                                                    <a href="{{route('product.show' , $product->slug)}}">{{$product->name}}
+                                                    </a>
+                                                </h4>
+                                                <h4><span class="text-white card-price pull-right">
+                                                {{presentPrice($product->price)}}
+                                                </span>
                                                 </h4>
                                             </div>
                                         </div>
@@ -149,20 +153,43 @@
                             </div>
                             <div class="card-body">
                                     @php $rank = 1 @endphp
-                                <ul>
+
                                     @foreach($topdownloads as $product)
-                                        <li class="chart">
-                                            <a title="Ableton Magic Racks: Vaporwave Racks" href="{{route('product.show' , $product->slug)}}" class="track-info" data-link="product-detail">
-                                                <span class="text-white rank">{{$rank++}}</span>
-                                                <img src="{{asset('/img/'.$featured_product->image)}}" width="50" height="50"></a>
-                                                <span class="title">{{$product->name}}</span>
-                                                <span class="price">{{presentPrice($product->price)}}</span>
-                                            </a>
-                                            <a class="play btn-preview" data-url="{{$featured_product->audio}}" data-link="product-sample" data-sampleid="4362" data-productid="{{$product->id}}"><i class="fa fa-play"></i></a>
-                                            <a id="add-to-cart-{{ $product->id }}" class="btn-add-to-basket" data-id="{{ $product->id }}"><i class="fa fa-shopping-cart"></i></a>
-                                        </li>
+                                        <div class="container">
+                                            <div class="tracks_chart">
+                                                <div class="row">
+                                                        <div class="col-sm-4 pull-left">
+                                                            <div class="img">
+                                                                <a title="Ableton Magic Racks: Vaporwave Racks" href="{{route('product.show' , $product->slug)}}" class="track-info" data-link="product-detail">
+                                                                    <img src="{{asset('/img/'.$featured_product->image)}}"></a>
+                                                                </a>
+                                                                <div class="track-overlay">
+                                                                    <div class="play-icon">
+                                                                        <a class="play" data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-link="product-sample" data-sampleid="4362" data-productid="{{$product->id}}"><i class="fa fa-play"></i></a>
+                                                                        <a class="pause" data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-link="product-sample" data-sampleid="4362" data-productid="{{$product->id}}"><i class="fa fa-pause"></i></a>
+                                                                    </div>
+                                                                </div>
+                                                                <span>{{$rank++}}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm pull-right">
+                                                            <span class="title">{{$product->name}}</span>
+
+                                                            <div class="track_chart_actions">
+                                                                <a id="add-to-cart-{{ $product->id }}" class="btn-add-to-basket" data-id="{{ $product->id }}"><i class="fa fa-shopping-cart"></i>
+                                                                    <span class="price pull-right">{{presentPrice($product->price)}}
+                                                                    </span>
+                                                                </a>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        <div class="spacer"></div>
                                     @endforeach
-                                </ul>
+
                             </div>
                         </div>
                     </div>
