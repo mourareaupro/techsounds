@@ -27,10 +27,14 @@ class HomeController extends Controller
     {
 
         $user = Auth::user();
-        $products = Product::paginate(3);
+        $products = Product::paginate(4);
 
         $featured_product = Product::where('featured' , 1)->first();
 
-        return view('home' , compact('products' , 'user' , 'featured_product'));
+        $free_products = Product::where('price', '0.00')->paginate(4);
+
+        $topdownloads = Product::orderBy('downloads' , 'DESC')->get();
+
+        return view('home' , compact('products' , 'user' , 'featured_product' , 'free_products' , 'topdownloads'));
     }
 }

@@ -10,17 +10,16 @@
                 <div class="flash-cart" style="display: none">
                     <div class="container">
                         <div class="row">
-                            <div class="col-sm">
-                            </div>
-                            <div class="col-sm text-center">
+                            <div class="col-sm align-content-center">
                                 <hr class="line-info">
-                                <h4><span id="flash_success" class="text-white"></span></h4>
-                            </div>
-                            <div class="col-sm">
+                                <h4><span id="flash_success" class="text-white"></span>
+                                    <a href="{{route('cart.index')}}" class="btn btn-info btn-round pull-right">View basket</a>
+                                </h4>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 @if (session()->has('success_message'))
                     <div class="alert alert-success">
                         {{ session()->get('success_message') }}

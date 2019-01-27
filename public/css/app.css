@@ -6281,6 +6281,7 @@ input[type=button].btn-block {
   align-items: center;
   justify-content: space-between;
   padding: 0.625rem 0.9375rem;
+  background: black !important;
 }
 
 .navbar > .container,
@@ -6299,6 +6300,18 @@ input[type=button].btn-block {
   font-size: 0.99925rem;
   line-height: inherit;
   white-space: nowrap;
+}
+
+@media only screen and (min-width: 900px) {
+  .navbar-brand {
+    max-width: 250px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .navbar-brand {
+    max-width: 150px;
+  }
 }
 
 .navbar-brand:hover,
@@ -20040,10 +20053,6 @@ hr.line-deafult {
   border-top: 3px solid #f4645f;
 }
 
-.player-section .player {
-  top: 10px !important;
-}
-
 .wavesurfer {
   box-sizing: border-box;
   cursor: pointer;
@@ -21441,6 +21450,88 @@ input[type=range]::-moz-range-track {
   display: inline-block;
   width: 50px;
   height: 50px;
+  font-size: 18px;
+  margin: 0 3px;
+  line-height: 50px;
+  text-align: center;
+  color: #000000 !important;
+  background-color: #fff;
+  border-radius: 100px;
+  background-size: 100% 100%;
+  border-radius: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.charts {
+  width: 100%;
+  overflow: hidden;
+}
+
+.charts li,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.charts li {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ffffff24;
+  padding: 10px;
+  position: relative;
+}
+
+.charts a .rank {
+  padding-left: 5px;
+  width: 30px;
+  display: block;
+  float: left;
+  padding-top: 20px;
+  line-height: 14px;
+  font-size: 20px;
+}
+
+.charts a .title {
+  padding-top: 6px;
+  height: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 172px;
+  margin-left: 10px;
+}
+
+.charts .title {
+  margin-top: 30px;
+  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-left: 10px;
+}
+
+.charts .price {
+  margin-top: 30px;
+  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-left: 10px;
+}
+
+.charts a .price,
+.charts a .title {
+  font-size: 16px;
+  line-height: 16px;
+  text-decoration: none;
+  padding: 8px;
+}
+
+.charts i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 50px;
+  width: 50px;
+  display: block;
   font-size: 18px;
   margin: 0 3px;
   line-height: 50px;
@@ -23967,5 +24058,33 @@ a {
   color: #f4645f;
   background-color: #f4645f;
   border-color: #f67d79;
+}
+
+@media screen and (max-width: 991px) {
+  .navbar .navbar-brand {
+    margin-left: 0px !important;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .newsletter {
+    width: 100%;
+  }
+}
+
+.navbar {
+  background: black;
+}
+
+.navbar.navbar-transparent {
+  background: black !important;
+  padding-top: 25px;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1440px;
+  }
 }
 

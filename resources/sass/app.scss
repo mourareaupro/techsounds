@@ -87,6 +87,7 @@
 // Sections
 @import "blk-design-system/custom/sections.scss";
 @import "blk-design-system/custom/track.scss";
+@import "blk-design-system/custom/charts.scss";
 
 
 
@@ -185,4 +186,35 @@ a {
     background-color: #f4645f;
     border-color: #f67d79;
 
+}
+
+@media screen and (max-width: 991px) {
+    .navbar .navbar-brand {
+        margin-left: 0px !important;
+        position: relative;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+   .newsletter{
+       width: 100%;
+   }
+}
+
+.navbar{
+    background: black;
+}
+
+.navbar.navbar-transparent {
+
+    background: black !important;
+    padding-top: 25px;
+
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1440px;
+    }
 }

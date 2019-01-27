@@ -2,130 +2,176 @@
 
 @section('content')
 
-    <div class="flash-cart" style="display: none">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm align-content-center">
-                    <hr class="line-info">
-                    <h4><span id="flash_success" class="text-white"></span>
-                        <a href="{{route('cart.index')}}" class="btn btn-info btn-round pull-right">View basket</a>
-                    </h4>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="page-header">
-        <img src="{{asset('img/blob.png')}}" class="path">
-        <div class="content-center">
-
-            <!-- featured product -->
-            <div class="row row-grid justify-content-between align-items-center text-left">
-                <div class="col-lg-6 col-md-6">
-                    <hr class="line-info">
-                    <h1 class="text-white"><a href="{{route('product.show' , $featured_product->slug)}}"><span class="text-white">{{$featured_product->name}}</span></a>
-                        <br/>
-                    </h1>
-                    <p class="text-white mb-3">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel...</p>
-                    <div class="btn-wrapper mb-3">
-                        @if($featured_product->freeDownload())
-                            <form action="{{route('product.free' , $featured_product->id)}}" method="get">
-                                {{ csrf_field() }}
-                                <button type="submit" class="btn btn-info btn-round btn-lg text-center">
-                                    <i class="tim-icons icon-cloud-download-93"></i> Free download
-                                </button>
-                            </form>
-                        @else
-                            <button id="add-to-cart" type="button" class="btn btn-info btn-round btn-lg text-center pull-right" data-id="{{ $featured_product->id }}"><i class="tim-icons icon-simple-add"></i> Add to cart</button>
-                        @endif
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-5">
-                    <div class="work-container">
-                        <div class="work-img">
-                            <a href="https://www.sampletoolsbycr2.com/product/dirty-house-2/">
-                                <img width="500" height="340" src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg"></a>
-                            <div class="portfolio-overlay">
-                                <div class="project-icons">
-                                    <a href="{{route('product.show' , $featured_product->slug)}}"><i class="fa fa-info"></i></a>
-                                    <a class="play" data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-product-id="#" data-audio="#"><i class="fa fa-play"></i></a>
-                                    <a id="add-to-cart-{{ $featured_product->id }}" data-id="{{ $featured_product->id }}"><i class="fa fa-shopping-cart"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- featured product -->
-        </div>
-    </div><!-- page header -->
-
-    <div class="spacer"></div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                @if (session()->has('success_message'))
-                    <div class="spacer"></div>
-                    <div class="alert alert-success">
-                        {{ session()->get('success_message') }}
-                    </div>
-                @endif
-
-                @if(count($errors) > 0)
-                    <div class="spacer"></div>
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{!! $error !!}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-
+        <div class="flash-cart" style="display: none">
+            <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-sm align-content-center">
                         <hr class="line-info">
-                        <h1>New releases
-                            <span class="text-info">+</span>
-                        </h1>
+                        <h4><span id="flash_success" class="text-white"></span>
+                            <a href="{{route('cart.index')}}" class="btn btn-info btn-round pull-right">View basket</a>
+                        </h4>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
+        <div class="container">
+            <!-- featured product -->
+            <div class="row">
 
-
-    <!-- products list -->
-    <div class="container">
-        <div class="row">
-            @foreach($products as $product)
-            <div class="col-xs-6 col-sm-4 col-md-15 work-item">
-                    <div class="work-container">
-                        <div class="work-img">
-                            <a href="https://www.sampletoolsbycr2.com/product/dirty-house-2/">
-                                <img height="340" src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg"></a>
-                            <div class="portfolio-overlay">
-                                <div class="project-icons">
-                                    <a id="product-route" href="{{route('product.show' , $product->slug)}}" data-id="{{ $product->id }}"><i class="fa fa-info"></i></a>
-                                    <a class="play" data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-link="product-sample" data-sampleid="4362" data-productid="{{$product->id}}"><i class="fa fa-play"></i></a>
-                                    <a id="add-to-cart-{{ $product->id }}" data-id="{{ $product->id }}"><i class="fa fa-shopping-cart"></i></a>
+                <!-- left section -->
+                <div class="col-sm-8">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <hr class="line-info">
+                            <h1 class="text-white"><a href="{{route('product.show' , $featured_product->slug)}}"><span class="text-white">{{$featured_product->name}}</span></a>
+                                <br/>
+                            </h1>
+                            <p class="text-white mb-3">{{$featured_product->description}}</p>
+                            <div class="btn-wrapper mb-3">
+                                @if($featured_product->freeDownload())
+                                    <form action="{{route('product.free' , $featured_product->id)}}" method="get">
+                                        {{ csrf_field() }}
+                                        <button type="submit" class="btn btn-info btn-round btn-lg text-center">
+                                            <i class="tim-icons icon-cloud-download-93"></i> Free download
+                                        </button>
+                                    </form>
+                                @else
+                                    <button id="add-to-cart" type="button" class="btn btn-info btn-round btn-lg text-center pull-right" data-id="{{ $featured_product->id }}"><i class="tim-icons icon-simple-add"></i> Add to cart</button>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="work-container">
+                                <div class="work-img">
+                                    <a href="{{route('product.show' , $featured_product->slug)}}">
+                                        <img src="{{asset('/img/'.$featured_product->image)}}"></a>
+                                    <div class="portfolio-overlay">
+                                        <div class="project-icons">
+                                            <a href="{{route('product.show' , $featured_product->slug)}}"><i class="fa fa-info"></i></a>
+                                            <a class="play" data-url="{{$featured_product->audio}}" data-product-id="#" data-audio="#"><i class="fa fa-play"></i></a>
+                                            <a id="add-to-cart-{{ $featured_product->id }}" data-id="{{ $featured_product->id }}"><i class="fa fa-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="work-description">
-                            <hr class="line-info">
-                            <h4><a href="{{route('product.show' , $product->slug)}}">{{$product->name}}</a><span class="text-white card-price pull-right">
-                                {{presentPrice($product->price)}}
-                            </span></h4>
 
+
+                        <div class="col-sm-12">
+                            <hr class="line-info">
+                            <h3>New releases
+                                <span class="text-info">+</span>
+                            </h3>
+                            <div class="container">
+                                <div class="row">
+                                @foreach($products as $product)
+                                    <div class="col-sm-3">
+                                        <div class="work-container">
+                                            <div class="work-img">
+                                                <a href="https://www.sampletoolsbycr2.com/product/dirty-house-2/">
+                                                    <img src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg"></a>
+                                                <div class="portfolio-overlay">
+                                                    <div class="project-icons">
+                                                        <a id="product-route" href="{{route('product.show' , $product->slug)}}" data-id="{{ $product->id }}"><i class="fa fa-info"></i></a>
+                                                        <a class="play" data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-link="product-sample" data-sampleid="4362" data-productid="{{$product->id}}"><i class="fa fa-play"></i></a>
+                                                        <a id="add-to-cart-{{ $product->id }}" data-id="{{ $product->id }}"><i class="fa fa-shopping-cart"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="work-description">
+                                                <hr class="line-info">
+                                                <h4><a href="{{route('product.show' , $product->slug)}}">{{$product->name}}</a><span class="text-white card-price pull-right">
+                                                    {{presentPrice($product->price)}}
+                                            </span>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-sm-12">
+                            <hr class="line-info">
+                            <h3>Free downloads
+                                <span class="text-info">+</span>
+                            </h3>
+                            <div class="container">
+                                <div class="row">
+                                    @foreach($products as $product)
+                                        <div class="col-sm-3">
+                                            <div class="work-container">
+                                                <div class="work-img">
+                                                    <a href="https://www.sampletoolsbycr2.com/product/dirty-house-2/">
+                                                        <img src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg"></a>
+                                                    <div class="portfolio-overlay">
+                                                        <div class="project-icons">
+                                                            <a id="product-route" href="{{route('product.show' , $product->slug)}}" data-id="{{ $product->id }}"><i class="fa fa-info"></i></a>
+                                                            <a class="play" data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-link="product-sample" data-sampleid="4362" data-productid="{{$product->id}}"><i class="fa fa-play"></i></a>
+                                                            <a id="add-to-cart-{{ $product->id }}" data-id="{{ $product->id }}"><i class="fa fa-shopping-cart"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="work-description">
+                                                    <hr class="line-info">
+                                                    <h4><a href="{{route('product.show' , $product->slug)}}">{{$product->name}}</a><span class="text-white card-price pull-right">
+                                                    {{presentPrice($product->price)}}
+                                            </span>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
                         </div>
                     </div>
-            </div>
-            @endforeach
-        </div><!-- row-->
-    </div>
+                </div>
+
+
+
+
+                <!-- section chart -->
+                <div class="col-sm-4">
+                    <div class="card charts">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <hr class="line-info">
+                                <h1 class="text-white">
+                                    TOP 10
+                                </h1>
+                            </div>
+                            <div class="card-body">
+                                    @php $rank = 1 @endphp
+                                <ul>
+                                    @foreach($topdownloads as $product)
+                                        <li>
+                                            <a title="Ableton Magic Racks: Vaporwave Racks" href="https://www.samplemagic.com/details/2670/ableton-magic-racks-vaporwave-racks" class="track-info" data-link="product-detail">
+                                                <span class="rank">{{$rank++}}
+                                                    <a href="https://www.samplemagic.com/details/2670/ableton-magic-racks-vaporwave-racks"  data-link="product-detail" title="Ableton Magic Racks: Vaporwave Racks" style="display: none"><i class="fa fa-play"></i></a>
+                                                </span>
+                                                <img src="https://www.samplemagic.com/images/uploads/stock/small_2638-1547120351.jpg" width="50" height="50">
+                                                <span class="title">{{$product->name}}</span>
+                                                <span class="price">€17.21</span>
+                                            </a>
+                                            <a href="https://www.samplemagic.com/details/2670/ableton-magic-racks-vaporwave-racks" rel="nofollow" title="Ableton Magic Racks: Vaporwave Racks" data-product-id="2670"><i class="fa fa-shopping-cart"></i></a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- charts -->
+
+            </div><!-- row -->
+            <!-- featured product -->
+
+    </div><!-- page header -->
 
 @endsection
 

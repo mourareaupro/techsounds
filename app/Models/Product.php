@@ -37,4 +37,8 @@ class Product extends Model
             return false;
         }
     }
+
+    public function file(){
+        return $this->belongsTo(FileProduct::class);
+    }
 }

@@ -1,0 +1,89 @@
+.charts {
+  width: 100%;
+  overflow: hidden;
+}
+
+.charts li, ol, ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+.charts li {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ffffff24;
+  padding: 10px;
+  position: relative;
+}
+
+
+.charts a .rank {
+  padding-left: 5px;
+  width: 30px;
+  display: block;
+  float: left;
+  padding-top: 20px;
+  line-height: 14px;
+  font-size: 20px;
+}
+
+
+.charts a .title {
+  padding-top: 6px;
+  height: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 172px;
+  margin-left: 10px;
+}
+
+.charts .title {
+
+  margin-top: 30px;
+  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-left: 10px;
+
+}
+
+
+.charts .price {
+
+  margin-top: 30px;
+  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-left: 10px;
+
+}
+
+.charts a .price, .charts a .title {
+  font-size: 16px;
+  line-height: 16px;
+  text-decoration: none;
+  padding: 8px;
+}
+
+
+.charts i {
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 50px;
+  width: 50px;
+  display: block;
+  font-size: 18px;
+  margin: 0 3px;
+  line-height: 50px;
+  text-align: center;
+  color: #000000 !important;
+  background-color: #fff;
+  border-radius: 100px;
+  background-size: 100% 100%;
+  border-radius: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+}

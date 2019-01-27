@@ -17,7 +17,7 @@ class CreateFileProductTable extends Migration
             $table->increments('id');
             $table->string('file_name')->nullable();
             $table->integer('product_id')->unsigned();
-            $table->integer('path')->unsigned();
+            $table->string('path');
             $table->timestamps();
         });
     }

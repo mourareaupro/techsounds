@@ -22,6 +22,7 @@
   align-items: center;
   justify-content: space-between; // space out brand from logo
   padding: $navbar-padding-y $navbar-padding-x;
+  background: black !important;
 
   // Because flex properties aren't inherited, we need to redeclare these first
   // few properties so that content nested within behave properly.
@@ -48,12 +49,18 @@
   line-height: inherit;
   white-space: nowrap;
 
+  @media only screen and (min-width: 900px) {
+    max-width: 250px;
+  }
+
+  @media only screen and (max-width: 900px) {
+    max-width: 150px;
+  }
+
   @include hover-focus {
     text-decoration: none;
   }
 }
-
-
 // Navbar nav
 //
 // Custom navbar navigation (doesn't require `.nav`, but does make use of `.nav-link`).
