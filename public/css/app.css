@@ -21525,7 +21525,9 @@ ul {
   padding: 8px;
 }
 
-.charts i {
+.charts .btn-add-to-basket,
+.charts .btn-info,
+.charts .btn-preview {
   position: absolute;
   top: 0;
   right: 0;
@@ -21543,6 +21545,20 @@ ul {
   border-radius: 0;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.charts .btn-preview {
+  display: none;
+  background-color: #fff;
+}
+
+.charts .btn-preview {
+  right: 55px;
+  background-position: 0 0;
+}
+
+.charts li:hover .btn-preview {
+  display: block;
 }
 
 /*

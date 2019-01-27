@@ -57,7 +57,7 @@
                             </div>
                         </div>
 
-
+                        <!-- new releases -->
                         <div class="col-sm-12">
                             <hr class="line-info">
                             <h3>New releases
@@ -70,7 +70,7 @@
                                         <div class="work-container">
                                             <div class="work-img">
                                                 <a href="https://www.sampletoolsbycr2.com/product/dirty-house-2/">
-                                                    <img src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg"></a>
+                                                    <img src="{{asset('/img/'.$featured_product->image)}}"></a>
                                                 <div class="portfolio-overlay">
                                                     <div class="project-icons">
                                                         <a id="product-route" href="{{route('product.show' , $product->slug)}}" data-id="{{ $product->id }}"><i class="fa fa-info"></i></a>
@@ -91,10 +91,10 @@
                                 @endforeach
                                 </div>
                             </div>
-                        </div>
+                        </div><!-- new releases -->
 
 
-
+                        <!-- free section -->
                         <div class="col-sm-12">
                             <hr class="line-info">
                             <h3>Free downloads
@@ -107,7 +107,7 @@
                                             <div class="work-container">
                                                 <div class="work-img">
                                                     <a href="https://www.sampletoolsbycr2.com/product/dirty-house-2/">
-                                                        <img src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg"></a>
+                                                        <img src="{{asset('/img/'.$featured_product->image)}}"></a>
                                                     <div class="portfolio-overlay">
                                                         <div class="project-icons">
                                                             <a id="product-route" href="{{route('product.show' , $product->slug)}}" data-id="{{ $product->id }}"><i class="fa fa-info"></i></a>
@@ -128,14 +128,16 @@
                                     @endforeach
                                 </div>
                             </div>
-                        </div>
+                        </div><!-- free section -->
+
                     </div>
-                </div>
+                </div><!-- left section -->
 
 
 
 
-                <!-- section chart -->
+
+                <!-- section right -->
                 <div class="col-sm-4">
                     <div class="card charts">
                         <div class="card-body">
@@ -149,24 +151,35 @@
                                     @php $rank = 1 @endphp
                                 <ul>
                                     @foreach($topdownloads as $product)
-                                        <li>
-                                            <a title="Ableton Magic Racks: Vaporwave Racks" href="https://www.samplemagic.com/details/2670/ableton-magic-racks-vaporwave-racks" class="track-info" data-link="product-detail">
-                                                <span class="rank">{{$rank++}}
-                                                    <a href="https://www.samplemagic.com/details/2670/ableton-magic-racks-vaporwave-racks"  data-link="product-detail" title="Ableton Magic Racks: Vaporwave Racks" style="display: none"><i class="fa fa-play"></i></a>
-                                                </span>
-                                                <img src="https://www.samplemagic.com/images/uploads/stock/small_2638-1547120351.jpg" width="50" height="50">
+                                        <li class="chart">
+                                            <a title="Ableton Magic Racks: Vaporwave Racks" href="{{route('product.show' , $product->slug)}}" class="track-info" data-link="product-detail">
+                                                <span class="text-white rank">{{$rank++}}</span>
+                                                <img src="{{asset('/img/'.$featured_product->image)}}" width="50" height="50"></a>
                                                 <span class="title">{{$product->name}}</span>
-                                                <span class="price">€17.21</span>
+                                                <span class="price">{{presentPrice($product->price)}}</span>
                                             </a>
-                                            <a href="https://www.samplemagic.com/details/2670/ableton-magic-racks-vaporwave-racks" rel="nofollow" title="Ableton Magic Racks: Vaporwave Racks" data-product-id="2670"><i class="fa fa-shopping-cart"></i></a>
+                                            <a class="play btn-preview" data-url="{{$featured_product->audio}}" data-link="product-sample" data-sampleid="4362" data-productid="{{$product->id}}"><i class="fa fa-play"></i></a>
+                                            <a id="add-to-cart-{{ $product->id }}" class="btn-add-to-basket" data-id="{{ $product->id }}"><i class="fa fa-shopping-cart"></i></a>
                                         </li>
                                     @endforeach
                                 </ul>
                             </div>
                         </div>
                     </div>
+
+
+                    <div class="card card-stats">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <hr class="line-info">
+                            </div>
+                            <div class="card-body">
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- charts -->
+                <!-- section right -->
 
             </div><!-- row -->
             <!-- featured product -->
