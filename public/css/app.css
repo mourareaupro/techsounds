@@ -6304,7 +6304,7 @@ input[type=button].btn-block {
 
 @media only screen and (min-width: 900px) {
   .navbar-brand {
-    max-width: 250px;
+    max-width: 200px;
   }
 }
 
