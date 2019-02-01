@@ -28,8 +28,8 @@
 
 .project-icons {
     position: absolute;
-    top: 150px;
     width: 100%;
+    bottom: 0px;
     text-align: center;
     transform: translateY(-50%);
 }
@@ -50,7 +50,6 @@
     width: 50px;
     height: 50px;
     font-size: 18px;
-    margin: 0 3px;
     line-height: 50px;
     text-align: center;
     color: #000000 !important;
@@ -59,6 +58,22 @@
     //background: transparent url(../img/shape-white.png) no-repeat center center;
     background-size: 100% 100%;
     border-radius: 0;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    bottom: 0;
+}
+
+
+.project-icons .pause{
+    display: none;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+    color: #000000 !important;
+    background-color: #fff;
+    border-radius: 100px;
+    //background: transparent url(../img/shape-white.png) no-repeat center center;
+    background-size: 100% 100%;
+    border-radius: 0;
+    bottom: 0;
 }

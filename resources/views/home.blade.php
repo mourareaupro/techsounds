@@ -48,8 +48,9 @@
                                         <img src="{{asset('/img/'.$featured_product->image)}}"></a>
                                     <div class="portfolio-overlay">
                                         <div class="project-icons">
-                                            <a href="{{route('product.show' , $featured_product->slug)}}"><i class="fa fa-info"></i></a>
-                                            <a class="play" data-url="{{$featured_product->audio}}" data-product-id="#" data-audio="#"><i class="fa fa-play"></i></a>
+                                            <a id="product-route" href="{{route('product.show' , $featured_product->slug)}}" data-id="{{ $featured_product->id }}"><i class="fa fa-info"></i></a>
+                                            <a class="play" data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-link="product-sample" data-sampleid="4362" data-productid="{{$featured_product->id}}"><i class="fa fa-play"></i></a>
+                                            <a class="pause" data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-link="product-sample" data-sampleid="4362" data-productid="{{$featured_product->id}}"><i class="fa fa-pause"></i></a>
                                             <a id="add-to-cart-{{ $featured_product->id }}" data-id="{{ $featured_product->id }}"><i class="fa fa-shopping-cart"></i></a>
                                         </div>
                                     </div>
@@ -75,6 +76,7 @@
                                                     <div class="project-icons">
                                                         <a id="product-route" href="{{route('product.show' , $product->slug)}}" data-id="{{ $product->id }}"><i class="fa fa-info"></i></a>
                                                         <a class="play" data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-link="product-sample" data-sampleid="4362" data-productid="{{$product->id}}"><i class="fa fa-play"></i></a>
+                                                        <a class="pause" data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-link="product-sample" data-sampleid="4362" data-productid="{{$product->id}}"><i class="fa fa-pause"></i></a>
                                                         <a id="add-to-cart-{{ $product->id }}" data-id="{{ $product->id }}"><i class="fa fa-shopping-cart"></i></a>
                                                     </div>
                                                 </div>
@@ -116,6 +118,7 @@
                                                         <div class="project-icons">
                                                             <a id="product-route" href="{{route('product.show' , $product->slug)}}" data-id="{{ $product->id }}"><i class="fa fa-info"></i></a>
                                                             <a class="play" data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-link="product-sample" data-sampleid="4362" data-productid="{{$product->id}}"><i class="fa fa-play"></i></a>
+                                                            <a class="pause" data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-link="product-sample" data-sampleid="4362" data-productid="{{$product->id}}"><i class="fa fa-pause"></i></a>
                                                             <a id="add-to-cart-{{ $product->id }}" data-id="{{ $product->id }}"><i class="fa fa-shopping-cart"></i></a>
                                                         </div>
                                                     </div>
@@ -234,7 +237,6 @@
         });
 
         $( '.play' ).click(function() {
-
             var track = $(this).attr("data-url");
             var product = $(this).attr("data-productid");
 
@@ -246,6 +248,23 @@
                 wavesurfer.load(track);
                 $(".player-section").css("display", "block");
             }
+
+            $(this).css("display","none");
+            $(this).next().css("display","inline-block");
+            $("#play").css("display", "none");
+            $("#pause").css("display", "block");
+
+        });
+
+
+        $( '.pause' ).click(function() {
+            wavesurfer.pause();
+
+            $(this).css("display","none");
+            $(this).prev().css("display","inline-block");
+            $("#play").css("display", "block");
+            $("#pause").css("display", "none");
+
         });
 
         wavesurfer.on('loading', function (percents, eventTarget) {
@@ -347,26 +366,5 @@
                 }
             });
         });
-
-
-
-        // $('a[id^="product-route"]').click( function() {
-        //     var product_id = $(this).attr('data-id');
-        //
-        //     $.ajax({
-        //         type: "GET",
-        //         url: '../public/ajax/product/' + product_id,
-        //         data: { product_id: product_id },
-        //         success: function (data) {
-        //
-        //             console.log('sucess');
-        //             $('.container').html(data.html);
-        //         },
-        //         error: function (data) {
-        //             console.log('Error:', data);
-        //         }
-        //     });
-        //
-        // });
     </script>
 @endsection
