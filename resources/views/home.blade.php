@@ -59,7 +59,7 @@
                         </div>
 
                         <!-- new releases -->
-                        <div class="col-sm-12">
+                        <div class="col-md-12">
                             <hr class="line-info">
                             <h3>New releases
                                 <span class="text-info">+</span>
@@ -67,7 +67,7 @@
                             <div class="container">
                                 <div class="row">
                                 @foreach($products as $product)
-                                    <div class="col-sm-3">
+                                    <div class="col-md-3">
                                         <div class="work-container">
                                             <div class="work-img">
                                                 <a href="https://www.sampletoolsbycr2.com/product/dirty-house-2/">
@@ -83,14 +83,14 @@
                                             </div>
                                             <div class="work-description">
                                                 <hr class="line-info">
-                                                <h4 class="pull-left">
+                                                <h5 class="pull-left">
                                                     <a href="{{route('product.show' , $product->slug)}}">{{$product->name}}
                                                     </a>
-                                                </h4>
-                                                <h4><span class="text-white card-price pull-right">
+                                                </h5>
+                                                <!--<h4><span class="text-white card-price pull-right">
                                                 {{presentPrice($product->price)}}
                                                 </span>
-                                                </h4>
+                                                </h4>-->
                                             </div>
                                         </div>
                                     </div>
@@ -101,7 +101,7 @@
 
 
                         <!-- free section -->
-                        <div class="col-sm-12">
+                        <div class="col-md-12">
                             <hr class="line-info">
                             <h3>Free downloads
                                 <span class="text-info">+</span>
@@ -109,7 +109,7 @@
                             <div class="container">
                                 <div class="row">
                                     @foreach($products as $product)
-                                        <div class="col-sm-3">
+                                        <div class="col-md-3">
                                             <div class="work-container">
                                                 <div class="work-img">
                                                     <a href="https://www.sampletoolsbycr2.com/product/dirty-house-2/">
@@ -125,10 +125,14 @@
                                                 </div>
                                                 <div class="work-description">
                                                     <hr class="line-info">
-                                                    <h4><a href="{{route('product.show' , $product->slug)}}">{{$product->name}}</a><span class="text-white card-price pull-right">
-                                                    {{presentPrice($product->price)}}
-                                            </span>
-                                                    </h4>
+                                                    <h5 class="pull-left">
+                                                        <a href="{{route('product.show' , $product->slug)}}">{{$product->name}}
+                                                        </a>
+                                                    </h5>
+                                                <!--<h4><span class="text-white card-price pull-right">
+                                                {{presentPrice($product->price)}}
+                                                        </span>
+                                                        </h4>-->
                                                 </div>
                                             </div>
                                         </div>
@@ -145,7 +149,7 @@
 
 
                 <!-- section right -->
-                <div class="col-sm-4">
+                <div class="col-md-4">
                     <div class="card charts">
                         <div class="card-body">
                             <div class="card-title">
