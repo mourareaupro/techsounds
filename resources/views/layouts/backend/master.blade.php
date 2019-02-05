@@ -12,7 +12,7 @@
     <!-- Bootstrap 3.3.6 -->
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/bootstrap/css/bootstrap.min.css') }}">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
@@ -90,13 +90,9 @@
                             <span class="caret hidden-xs"></span>
                         </a>
                         <ul class="dropdown-menu std" role="menu">
-                            <li><a href="#">Editer mon profil</a></li>
-                            <li class="divider"></li>
+                            <!--<li class="divider"></li>-->
                             <li><a href="{{ route('logout') }}"><i class="fa fa-fw fa-power-off"></i>Déconnexion</a></li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="#" data-toggle="control-sidebar"><i class="glyphicon glyphicon-question-sign"></i></a>
                     </li>
                 </ul>
             </div>
@@ -107,12 +103,45 @@
     <aside class="main-sidebar">
         <section class="sidebar">
             <ul class="sidebar-menu">
-
                 <!-- MENU -->
+
+                <li {!! (Request::is('/') ? 'class="active"' : '') !!}><a href="#"><i class="fas fa-tachometer-alt fa-2x"></i> <span class="h4"> Dashboard</span></a></li>
+
+
                 <li {!! (Request::is('/') ? 'class="active treeview"' : '') !!}>
                     <a href="#">
-                        <i class="fa fa-fw fa-shield"></i>
-                        <span data-step="17" data-intro="Cette rubrique permet à la fédération de consulter toutes les licences à valider sur le logiciel et de pouvoir éditer les licences">Gestion des Licences </span>
+                        <i class="fas fa-blog fa-2x"></i>
+                        <span class="h4"> Blog</span>
+                        <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li {!! (Request::is('/') ? 'class="active"' : '') !!}><a href="#"><i class="glyphicon glyphicon-print"></i>Licences Editables</a></li>
+                        <li {!! (Request::is('/') ? 'class="active"' : '') !!}><a href="#"><i class="glyphicon glyphicon-print"></i>Impression Temporaire</a></li>
+                    </ul>
+                </li>
+
+
+                <li {!! (Request::is('/') ? 'class="active treeview"' : '') !!}>
+                    <a href="#">
+                        <i class="fab fa-creative-commons-sampling fa-2x"></i>
+                        <span class="h4"> Samples</span>
+                        <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li {!! (Request::is('/') ? 'class="active"' : '') !!}><a href="#"><i class="glyphicon glyphicon-print"></i>Licences Editables</a></li>
+                        <li {!! (Request::is('/') ? 'class="active"' : '') !!}><a href="#"><i class="glyphicon glyphicon-print"></i>Impression Temporaire</a></li>
+                    </ul>
+                </li>
+
+
+                <li {!! (Request::is('/') ? 'class="active treeview"' : '') !!}>
+                    <a href="#">
+                        <i class="fas fa-file-video fa-2x"></i>
+                        <span class="h4"> Courses</span>
                         <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
