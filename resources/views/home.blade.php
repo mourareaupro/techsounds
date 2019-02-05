@@ -200,18 +200,6 @@
                             </div>
                         </div>
                     </div>
-
-
-                    <div class="card card-stats">
-                        <div class="card-body">
-                            <div class="card-title">
-                                <hr class="line-info">
-                            </div>
-                            <div class="card-body">
-
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <!-- section right -->
 

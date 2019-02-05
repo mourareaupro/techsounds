@@ -27,6 +27,7 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.6.3",
+        "admin-lte": "^3.0.0-alpha.2",
         "vue-stripe": "^0.1.52"
     }
 }

@@ -1,4 +1,11 @@
-@extends('back.layout')
-@section('main')
-    C'est ma page d'accueil !
-@endsection
+@extends('adminlte::page')
+
+@section('title', 'Dashboard')
+
+@section('content_header')
+    <h1>Dashboard</h1>
+@stop
+
+@section('content')
+    <p>Welcome to this beautiful admin panel.</p>
+@stop
