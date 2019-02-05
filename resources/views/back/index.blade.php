@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('layouts.backend.master')
 
 @section('title', 'Dashboard')
 
