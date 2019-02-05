@@ -64,96 +64,12 @@
         </a>
 
         <!-- Header Navbar -->
-        <nav class="navbar navbar-static-top" role="navigation">
-            <!-- Sidebar toggle button-->
-            <a href="#" class="sidebar-toggle hidden-lg hidden-md hidden-sm" data-toggle="offcanvas" role="button">
-                <span class="sr-only"></span>
-            </a>
-            <ul class="nav navbar-nav hidden-xs">
-                <li>
-                    <a href="javascript:history.back()" class="" data-step="7" data-intro="Le boutton retour se situe ici ! ">
-                        <i class="fa fa-arrow-circle-o-left"></i> Retour
-                    </a>
-                </li>
-            </ul>
-            <!-- Header Navbar: style can be found in header.less -->
-
-            <!-- Navbar Right Menu -->
-            <div class="navbar-custom-menu">
-                <ul class="nav navbar-nav">
-
-                    <!-- User Account: style can be found in dropdown.less -->
-                    <li class="dropdown user user-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{ asset('vendor/adminlte/dist/img/avatar.png') }}" class="user-image" alt="User Image">
-                            <span class="hidden-xs">Bienvenue  {{Auth::user()->name}}</span>
-                            <span class="caret hidden-xs"></span>
-                        </a>
-                        <ul class="dropdown-menu std" role="menu">
-                            <!--<li class="divider"></li>-->
-                            <li><a href="{{ route('logout') }}"><i class="fa fa-fw fa-power-off"></i>Déconnexion</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        @include('layouts.backend.partials.nav')
     </header><!-- /.header -->
 
     <!-- sidebar: style can be found in sidebar.less -->
-    <aside class="main-sidebar">
-        <section class="sidebar">
-            <ul class="sidebar-menu">
-                <!-- MENU -->
-
-                <li {!! (Request::is('/') ? 'class="active"' : '') !!}><a href="#"><i class="fas fa-tachometer-alt fa-2x"></i> <span class="h4"> Dashboard</span></a></li>
-
-
-                <li {!! (Request::is('/') ? 'class="active treeview"' : '') !!}>
-                    <a href="#">
-                        <i class="fas fa-blog fa-2x"></i>
-                        <span class="h4"> Blog</span>
-                        <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li {!! (Request::is('/') ? 'class="active"' : '') !!}><a href="#"><i class="glyphicon glyphicon-print"></i>Licences Editables</a></li>
-                        <li {!! (Request::is('/') ? 'class="active"' : '') !!}><a href="#"><i class="glyphicon glyphicon-print"></i>Impression Temporaire</a></li>
-                    </ul>
-                </li>
-
-
-                <li {!! (Request::is('/') ? 'class="active treeview"' : '') !!}>
-                    <a href="#">
-                        <i class="fab fa-creative-commons-sampling fa-2x"></i>
-                        <span class="h4"> Samples</span>
-                        <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li {!! (Request::is('/') ? 'class="active"' : '') !!}><a href="#"><i class="glyphicon glyphicon-print"></i>Licences Editables</a></li>
-                        <li {!! (Request::is('/') ? 'class="active"' : '') !!}><a href="#"><i class="glyphicon glyphicon-print"></i>Impression Temporaire</a></li>
-                    </ul>
-                </li>
-
-
-                <li {!! (Request::is('/') ? 'class="active treeview"' : '') !!}>
-                    <a href="#">
-                        <i class="fas fa-file-video fa-2x"></i>
-                        <span class="h4"> Courses</span>
-                        <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li {!! (Request::is('/') ? 'class="active"' : '') !!}><a href="#"><i class="glyphicon glyphicon-print"></i>Licences Editables</a></li>
-                        <li {!! (Request::is('/') ? 'class="active"' : '') !!}><a href="#"><i class="glyphicon glyphicon-print"></i>Impression Temporaire</a></li>
-                    </ul>
-                </li>
-            </ul><!-- /.sidebar-menu -->
-        </section><!-- /.sidebar -->
-    </aside><!-- /.main-sidebar -->
+    @include('layouts.backend.partials.main-sidebar')
+    <!-- /.main-sidebar -->
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">

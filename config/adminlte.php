@@ -15,7 +15,7 @@ return [
 
     'title' => 'TECH SOUNDS +',
 
-    'title_prefix' => '',
+    'title_prefix' => 'TECH SOUNDS PLUS',
 
     'title_postfix' => '',
 
