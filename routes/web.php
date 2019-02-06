@@ -26,6 +26,15 @@ Route::post('/subscription', 'SubscriptionController@create')->name('subscriptio
 Route::middleware ('admin')->group (function () {
 
     Route::get('/admin' , 'AdminController@index')->name('backoffice');
+    Route::get('/admin/orders' ,  'AdminController@orders')->name('admin.orders');
+
+    Route::get('/admin/products' ,  'AdminController@products')->name('admin.products');
+    Route::get('/admin/new/product' ,  'AdminController@addProduct')->name('admin.new.product');
+    Route::get('/admin/show/product/{id}' ,  'AdminController@showProduct')->name('admin.show.product');
+
+    Route::get('/admin/posts' ,  'AdminController@posts')->name('admin.posts');
+    Route::get('/admin/new/post' ,  'AdminController@addPost')->name('admin.new.post');
+    Route::get('/admin/show/post/{id}' ,  'AdminController@showPost')->name('admin.show.post');
 
     Route::name ('maintenance.')->prefix('maintenance')->group(function () {
         Route::name ('index')->get ('/', 'AdminController@edit');
