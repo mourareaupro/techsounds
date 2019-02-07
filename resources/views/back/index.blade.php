@@ -8,6 +8,28 @@
 
 @section('content')
 
+    <div class="row">
+    @include('back.partials.stats-preview')
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            @include('back.partials.orders-preview')
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+        @include('back.partials.posts-preview')
+        </div>
+
+        <div class="col-md-6">
+            @include('back.partials.products-preview')
+        </div>
+    </div>
+
+
 @stop
 
 <script>
