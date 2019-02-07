@@ -25,7 +25,7 @@ Route::post('/subscription', 'SubscriptionController@create')->name('subscriptio
 //backoffice
 Route::middleware ('admin')->group (function () {
 
-    Route::get('/admin' , 'AdminController@index')->name('backoffice');
+    Route::get('/admin' , 'AdminController@index')->name('admin.dashboard');
     Route::get('/admin/orders' ,  'AdminController@orders')->name('admin.orders');
 
     Route::get('/admin/products' ,  'AdminController@products')->name('admin.products');
@@ -36,9 +36,11 @@ Route::middleware ('admin')->group (function () {
     Route::get('/admin/new/post' ,  'AdminController@addPost')->name('admin.new.post');
     Route::get('/admin/show/post/{id}' ,  'AdminController@showPost')->name('admin.show.post');
 
+    Route::get('/admin/users' ,  'AdminController@users')->name('admin.users');
+
     Route::name ('maintenance.')->prefix('maintenance')->group(function () {
-        Route::name ('index')->get ('/', 'AdminController@edit');
-        Route::name ('update')->put ('/', 'AdminController@update');
+        Route::name ('index')->get ('/', 'AdminController@editMaintenance');
+        Route::name ('update')->put ('/', 'AdminController@updateMaintenance');
     });
 });
 

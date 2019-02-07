@@ -19,37 +19,6 @@ class AdminController extends Controller
         return view('back.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -57,7 +26,7 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, Application $app)
+    public function editMaintenance(Request $request, Application $app)
     {
         $maintenance = $app->isDownForMaintenance();
         $ipChecked = true;
@@ -76,7 +45,7 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function updateMaintenance(Request $request)
     {
         if($request->maintenance) {
             Artisan::call ('down', $request->ip ? ['--allow' => $request->ip()] : []);
@@ -86,14 +55,28 @@ class AdminController extends Controller
         return redirect()->route('maintenance.index')->with ('ok', __ ('Le mode a bien été actualisé.'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+
+    public function products(){
+
+    }
+
+    public function addProduct(){
+
+    }
+
+    public function posts(){
+
+    }
+
+    public function addPost(){
+
+    }
+
+    public function users(){
+
+    }
+
+    public function orders(){
+
     }
 }
