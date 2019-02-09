@@ -37,7 +37,6 @@ Route::middleware ('admin')->group (function () {
     Route::get('/admin/new/post' ,  'AdminPostController@create')->name('admin.new.post');
     Route::get('/admin/edit/post/{slug}' ,  'AdminPostController@edit')->name('admin.edit.post');
 
-
     Route::get('/admin/users' ,  'AdminUserController@index')->name('admin.users');
     Route::get('/admin/user/{id}' ,  'AdminUserController@show')->name('admin.show.user');
 
