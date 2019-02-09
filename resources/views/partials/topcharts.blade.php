@@ -30,7 +30,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm pull-right">
-                                    <span class="title">{{$product->name}}</span>
+                                    <a href="{{route('product.show' , $product->slug)}}" class="text-white">{{$product->name}}</a>
 
                                     <div class="track_chart_actions">
                                         @if(!$product->freeDownload())

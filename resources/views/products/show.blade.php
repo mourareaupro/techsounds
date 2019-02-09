@@ -48,7 +48,7 @@
             <!-- product title and descirption -->
             <div class="col-sm-8"><hr class="line-info">
                 <h1>{{$product->name}}
-                    <span class="text-info">+</span> <span class="pull-right">{{presentPrice($product->price)}}</span>
+                    <span class="text-info">+</span> <span class="pull-right">@if(!$product->freeDownload()) {{presentPrice($product->price)}} @else Free download @endif</span>
                 </h1>
                 <p class="text-white">{{$product->description}}</p>
             </div>
@@ -62,12 +62,8 @@
                 <div class="demo">
                     <ul>
                         <li>
-                            <a data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-link="product-sample" data-sampleid="4362" data-productid="{{$product->id}}"><i class="fas fa-play"></i></a>
+                            <a data-url="{{$product->audio}}" data-link="product-sample" data-sampleid="4362" data-productid="{{$product->id}}"><i class="fas fa-play"></i></a>
                             Full Demo
-                        </li>
-                        <li>
-                            <a data-url="https://www.samplemagic.com/audio/samples/SM%20Studio%20-%20Indie%20Rock%20Guitars%20-%20Full%20Demo.mp3" data-link="product-sample" data-sampleid="4363" data-productid="2671"><i class="fas fa-play"></i></a>
-                            Breaks &amp; Beats Demo 1
                         </li>
                     </ul>
                 </div>
@@ -78,8 +74,16 @@
             <div class="col-sm-8">
                 <div class="card">
                     <div class="card-body">
+                        @if(!$product->freeDownload())
                         <button id="add-to-cart" type="button" class="btn btn-info btn-lg text-center pull-right" data-id="{{ $product->id }}"><i class="tim-icons icon-simple-add"></i> Add to cart</button>
-
+                        @else
+                            <form action="{{route('product.free' , $product->id)}}" method="get">
+                                {{ csrf_field() }}
+                                <button type="submit" class="btn btn-info btn-round btn-lg text-center pull-right">
+                                    <i class="tim-icons icon-cloud-download-93"></i> Free download
+                                </button>
+                            </form>
+                        @endif
                         <!-- product detail & buy link -->
                         <hr class="line-info">
                         <h2 class="card-title">Description</h2>
