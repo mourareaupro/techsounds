@@ -33,10 +33,19 @@
                                     <span class="title">{{$product->name}}</span>
 
                                     <div class="track_chart_actions">
-                                        <a id="add-to-cart-{{ $product->id }}" class="btn-add-to-basket" data-id="{{ $product->id }}"><i class="fa fa-shopping-cart"></i>
-                                            <span class="price pull-right">{{presentPrice($product->price)}}
-                                                                    </span>
-                                        </a>
+                                        @if(!$product->freeDownload())
+                                            <a id="add-to-cart-{{ $product->id }}" class="btn-add-to-basket" data-id="{{ $product->id }}"><i class="fa fa-shopping-cart"></i>
+                                                <span class="price pull-right">{{presentPrice($product->price)}}</span>
+                                            </a>
+                                        @else
+                                            <form action="{{route('product.free' , $product->id)}}" method="get">
+                                                {{ csrf_field() }}
+                                                <button type="submit" class="btn-free-download">
+                                                    <i class="text-white tim-icons icon-cloud-download-93"> </i>
+                                                    <span class="text-white price pull-right">&nbsp;&nbsp;  Free download</span>
+                                                </button>
+                                            </form>
+                                        @endif
                                     </div>
 
                                 </div>

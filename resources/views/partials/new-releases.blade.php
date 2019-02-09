@@ -9,14 +9,17 @@
                 <div class="col-md-3">
                     <div class="work-container">
                         <div class="work-img">
-                            <a href="https://www.sampletoolsbycr2.com/product/dirty-house-2/">
+                            <a href="#">
                                 <img src="{{asset('/img/'.$featured_product->image)}}"></a>
                             <div class="portfolio-overlay">
                                 <div class="project-icons">
                                     <a id="product-route" href="{{route('product.show' , $product->slug)}}" data-id="{{ $product->id }}"><i class="fa fa-info"></i></a>
-                                    <a class="play" data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-link="product-sample" data-sampleid="4362" data-productid="{{$product->id}}"><i class="fa fa-play"></i></a>
-                                    <a class="pause" data-url="https://www.samplemagic.com/audio/samples/SM209%20-%20Breaks%20&%20Beats%20-%20Full%20Demo.mp3" data-link="product-sample" data-sampleid="4362" data-productid="{{$product->id}}"><i class="fa fa-pause"></i></a>
+                                    <a class="play" data-url="{{$product->audio}}" data-link="product-sample" data-sampleid="4362" data-productid="{{$product->id}}"><i class="fa fa-play"></i></a>
+                                    <a class="pause" data-url="{{$product->audio}}" data-link="product-sample" data-sampleid="4362" data-productid="{{$product->id}}"><i class="fa fa-pause"></i></a>
+
+                                    @if(!$product->freeDownload())
                                     <a id="add-to-cart-{{ $product->id }}" data-id="{{ $product->id }}"><i class="fa fa-shopping-cart"></i></a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
