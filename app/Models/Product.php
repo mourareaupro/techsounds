@@ -6,6 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+
+    protected $fillable = [
+        'name', 'slug', 'details', 'price' , 'description' , 'audio' , 'file', 'size' , 'featured' ,'image' , 'images'
+    ];
+
+
+
     public function presentPrice()
     {
         return money_format($this->price , '€%i' );

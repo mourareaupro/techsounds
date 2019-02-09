@@ -20,7 +20,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('back.index');
+        $orders = Order::paginate(10);
+        $products = Product::paginate(10);
+        return view('back.index', compact('orders','products'));
     }
 
 
@@ -57,51 +59,5 @@ class AdminController extends Controller
             Artisan::call ('up');
         }
         return redirect()->route('maintenance.index')->with ('ok', __ ('Le mode a bien été actualisé.'));
-    }
-
-
-    public function products(){
-        $products = Product::paginate(50);
-        return view('back.products.index', compact('products'));
-    }
-
-    public function addProduct(){
-
-        return view('back.products.create');
-    }
-
-    public function editProduct($slug){
-
-        $product = Product::where('slug' , $slug)->first();
-        return view('back.products.edit' , compact('product'));
-    }
-
-    public function posts(){
-
-        $posts = Post::paginate(50);
-        return view('back.posts.index' , compact('posts'));
-    }
-
-    public function addPost(){
-
-        return view('back.posts.create');
-    }
-
-    public function users(){
-
-        $users = User::paginate(50);
-        return view('back.users.index', compact('users'));
-    }
-
-    public function showUser($id){
-
-        $user = User::findOrFail($id);
-        return view('back.users.show', compact('user'));
-    }
-
-    public function orders(){
-
-        $orders = Order::paginate(50);
-        return view('back.orders.index' , compact('orders'));
     }
 }

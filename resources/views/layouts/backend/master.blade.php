@@ -32,6 +32,10 @@
     <!-- jvectormap -->
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/jvectormap/jquery-jvectormap-1.2.2.css') }}">
 
+    <!-- override -->
+    <link rel="stylesheet" href="{{ asset('css/override.css') }}">
+    <!-- override -->
+
     <!-- DataTables -->
     @if(config('adminlte.plugins.datatables'))
         <link rel="stylesheet" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">

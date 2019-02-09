@@ -21,6 +21,8 @@
                         <th>Name</th>
                         <th>Price</th>
                         <th>Downloads</th>
+                        <th>Demo</th>
+                        <th>Size</th>
                         <th>Actions</th>
                         <tbody>
                         @if($products->count())
@@ -28,8 +30,10 @@
                                 <tr>
                                     <td colspan="1"><a href="#"><img class="checkout-table-img" src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg" style="width: 50px; height: 50px" alt="Card image cap"></a></td>
                                     <td>{{$product->name}}</td>
-                                    <td class="text">{{ presentPrice($product->price) }}</td>
+                                    <td class="text">@if($product->price === 0.00) <span class="text-info">Free</span> @else{{ presentPrice($product->price) }}@endif</td>
                                     <td>{{$product->downloads}}</td>
+                                    <td>@if($product->audio)Yes @else No @endif</td>
+                                    <td>@if($product->size){{$product->size}} @else Unknow @endif</td>
                                     <td>{!! link_to_route('admin.edit.product', 'Edit', [$product->slug], ['class' => 'btn btn-primary']) !!}</td>
                                 </tr>
                             @endforeach

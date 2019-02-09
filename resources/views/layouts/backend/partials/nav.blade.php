@@ -16,7 +16,7 @@
     <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
             <li>
-                <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <a href="{{route('home')}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
                     <span class="hidden-xs"> Store</span>
                 </a>
             </li>

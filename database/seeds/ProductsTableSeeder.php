@@ -16,7 +16,6 @@ class ProductsTableSeeder extends Seeder
             \App\Models\Product::create([
                 'name' => 'Sample Pack '.$i,
                 'slug' => 'samples-pack-'.$i,
-                'details' => [13,14,15][array_rand([13,14,15])] . ' inch, ' . [1, 2, 3][array_rand([1, 2, 3])] .' TB SSD, 32GB RAM',
                 'price' => rand(10.99, 22.56),
                 'description' =>'Lorem '. $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
                 'image' => 'products/dummy/laptop-'.$i.'.jpg',

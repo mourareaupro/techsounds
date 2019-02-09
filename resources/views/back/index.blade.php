@@ -20,14 +20,11 @@
     </div>
 
     <div class="row">
-        <div class="col-md-6">
-        @include('back.partials.posts-preview')
-        </div>
-
-        <div class="col-md-6">
+        <div class="col-md-12">
             @include('back.partials.products-preview')
         </div>
     </div>
+
 
 
 @stop

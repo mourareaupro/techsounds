@@ -26,19 +26,20 @@ Route::post('/subscription', 'SubscriptionController@create')->name('subscriptio
 Route::middleware ('admin')->group (function () {
 
     Route::get('/admin' , 'AdminController@index')->name('admin.dashboard');
-    Route::get('/admin/orders' ,  'AdminController@orders')->name('admin.orders');
+    Route::get('/admin/orders' ,  'AdminOrderController@index')->name('admin.orders');
 
-    Route::get('/admin/products' ,  'AdminController@products')->name('admin.products');
-    Route::get('/admin/new/product' ,  'AdminController@addProduct')->name('admin.new.product');
-    Route::get('/admin/edit/product/{slug}' ,  'AdminController@editProduct')->name('admin.edit.product');
+    Route::get('/admin/products' ,  'AdminProductController@index')->name('admin.products');
+    Route::get('/admin/new/product' ,  'AdminProductController@create')->name('admin.new.product');
+    Route::get('/admin/edit/product/{slug}' ,  'AdminProductController@edit')->name('admin.edit.product');
+    Route::post('/admin/update/product/{id}' ,  'AdminProductController@update')->name('admin.udpate.product');
 
-    Route::get('/admin/posts' ,  'AdminController@posts')->name('admin.posts');
-    Route::get('/admin/new/post' ,  'AdminController@addPost')->name('admin.new.post');
-    Route::get('/admin/edit/post/{slug}' ,  'AdminController@editProduct')->name('admin.edit.post');
+    Route::get('/admin/posts' ,  'AdminPostController@index')->name('admin.posts');
+    Route::get('/admin/new/post' ,  'AdminPostController@create')->name('admin.new.post');
+    Route::get('/admin/edit/post/{slug}' ,  'AdminPostController@edit')->name('admin.edit.post');
 
 
-    Route::get('/admin/users' ,  'AdminController@users')->name('admin.users');
-    Route::get('/admin/user/{id}' ,  'AdminController@showUser')->name('admin.show.user');
+    Route::get('/admin/users' ,  'AdminController@index')->name('admin.users');
+    Route::get('/admin/user/{id}' ,  'AdminController@show')->name('admin.show.user');
 
     Route::name ('maintenance.')->prefix('maintenance')->group(function () {
         Route::name ('index')->get ('/', 'AdminController@editMaintenance');

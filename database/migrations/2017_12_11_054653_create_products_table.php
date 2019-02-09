@@ -17,11 +17,11 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->string('slug')->unique();
-            $table->string('details')->nullable();
             $table->float('price');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->integer('downloads')->default(0);
             $table->string('file')->nullable();
+            $table->float('size');
             $table->boolean('featured')->default(false);
             $table->timestamps();
         });
