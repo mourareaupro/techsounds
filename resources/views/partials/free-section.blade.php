@@ -10,7 +10,7 @@
                     <div class="work-container">
                         <div class="work-img">
                             <a href="#">
-                                <img src="{{asset('/img/'.$featured_product->image)}}"></a>
+                                <img src="{{asset('/img/'.$product->image)}}"></a>
                             <div class="portfolio-overlay">
                                 <div class="project-icons">
                                     <a id="product-route" href="{{route('product.show' , $product->slug)}}" data-id="{{ $product->id }}"><i class="fa fa-info"></i></a>

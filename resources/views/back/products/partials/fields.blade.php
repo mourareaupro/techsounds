@@ -14,6 +14,11 @@
     <textarea class="form-control" rows="3" name="description">{{$product->description}}</textarea>
 </div>
 
+<div class="form-group">
+    <label>Price</label>
+    <textarea class="form-control" rows="3" name="price">{{$product->price}}</textarea>
+</div>
+
 
 <div class="form-group">
     <label for="name">Audio sample URL</label>

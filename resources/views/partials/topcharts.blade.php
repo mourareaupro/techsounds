@@ -18,7 +18,7 @@
                                 <div class="col-sm-4 pull-left">
                                     <div class="img">
                                         <a title="{{$product->name}}" href="{{route('product.show' , $product->slug)}}" class="track-info" data-link="product-detail">
-                                            <img src="{{asset('/img/'.$featured_product->image)}}"></a>
+                                            <img src="{{asset('/img/'.$product->image)}}"></a>
                                         </a>
                                         <div class="track-overlay">
                                             <div class="play-icon">
