@@ -34,7 +34,8 @@
 
                                     <div class="track_chart_actions">
                                         @if(!$product->freeDownload())
-                                            <a id="add-to-cart-{{ $product->id }}" class="btn-add-to-basket" data-id="{{ $product->id }}"><i class="fa fa-shopping-cart"></i>
+                                            <a id="add-to-cart-{{ $product->id }}" class="btn-add-to-basket" data-id="{{ $product->id }}">
+                                                <i class="fa fa-shopping-cart"></i>
                                                 <span class="price pull-right">{{presentPrice($product->price)}}</span>
                                             </a>
                                         @else

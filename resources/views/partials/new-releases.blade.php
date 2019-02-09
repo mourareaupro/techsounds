@@ -19,6 +19,8 @@
 
                                     @if(!$product->freeDownload())
                                     <a id="add-to-cart-{{ $product->id }}" data-id="{{ $product->id }}"><i class="fa fa-shopping-cart"></i></a>
+                                    @else
+                                        <a id="product-route" href="{{route('product.free' , $product->id)}}" data-id="{{ $product->id }}"><i class="tim-icons icon-cloud-download-93"></i></a>
                                     @endif
                                 </div>
                             </div>
