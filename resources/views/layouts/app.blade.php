@@ -91,7 +91,7 @@
                                     </a>
 
                                     @admin
-                                    <a class="dropdown-item" href="{{ route('backoffice') }}">
+                                    <a class="dropdown-item" href="{{ route('admin.dashboard') }}">
                                         <i class="fas fa-plus fa-lg"></i> @lang('Backoffice')
                                     </a>
                                     @endadmin
