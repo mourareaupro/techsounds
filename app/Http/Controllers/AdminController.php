@@ -63,7 +63,7 @@ class AdminController extends Controller
 
     public function addProduct(){
 
-        return view('back.products.add');
+        return view('back.products.create');
     }
 
     public function posts(){
@@ -73,12 +73,12 @@ class AdminController extends Controller
 
     public function addPost(){
 
-        return view('back.posts.add');
+        return view('back.posts.create');
     }
 
     public function users(){
 
-        return view('back.users');
+        return view('back.users.index');
     }
 
     public function orders(){
