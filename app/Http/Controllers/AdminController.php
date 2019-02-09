@@ -58,25 +58,31 @@ class AdminController extends Controller
 
     public function products(){
 
+        return view('back.products.index');
     }
 
     public function addProduct(){
 
+        return view('back.products.add');
     }
 
     public function posts(){
 
+        return view('back.posts.index');
     }
 
     public function addPost(){
 
+        return view('back.posts.add');
     }
 
     public function users(){
 
+        return view('back.users');
     }
 
     public function orders(){
 
+        return view('back.orders.index');
     }
 }
