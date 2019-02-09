@@ -30,13 +30,15 @@ Route::middleware ('admin')->group (function () {
 
     Route::get('/admin/products' ,  'AdminController@products')->name('admin.products');
     Route::get('/admin/new/product' ,  'AdminController@addProduct')->name('admin.new.product');
-    Route::get('/admin/show/product/{id}' ,  'AdminController@showProduct')->name('admin.show.product');
+    Route::get('/admin/edit/product/{slug}' ,  'AdminController@editProduct')->name('admin.edit.product');
 
     Route::get('/admin/posts' ,  'AdminController@posts')->name('admin.posts');
     Route::get('/admin/new/post' ,  'AdminController@addPost')->name('admin.new.post');
-    Route::get('/admin/show/post/{id}' ,  'AdminController@showPost')->name('admin.show.post');
+    Route::get('/admin/edit/post/{slug}' ,  'AdminController@editProduct')->name('admin.edit.post');
+
 
     Route::get('/admin/users' ,  'AdminController@users')->name('admin.users');
+    Route::get('/admin/user/{id}' ,  'AdminController@showUser')->name('admin.show.user');
 
     Route::name ('maintenance.')->prefix('maintenance')->group(function () {
         Route::name ('index')->get ('/', 'AdminController@editMaintenance');

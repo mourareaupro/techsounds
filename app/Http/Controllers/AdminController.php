@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
+use App\Models\Post;
+use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\IpUtils;
 use Illuminate\Contracts\Foundation\Application;
@@ -57,8 +61,8 @@ class AdminController extends Controller
 
 
     public function products(){
-
-        return view('back.products.index');
+        $products = Product::paginate(50);
+        return view('back.products.index', compact('products'));
     }
 
     public function addProduct(){
@@ -66,9 +70,16 @@ class AdminController extends Controller
         return view('back.products.create');
     }
 
+    public function editProduct($slug){
+
+        $product = Product::where('slug' , $slug)->first();
+        return view('back.products.edit' , compact('product'));
+    }
+
     public function posts(){
 
-        return view('back.posts.index');
+        $posts = Post::paginate(50);
+        return view('back.posts.index' , compact('posts'));
     }
 
     public function addPost(){
@@ -78,11 +89,19 @@ class AdminController extends Controller
 
     public function users(){
 
-        return view('back.users.index');
+        $users = User::paginate(50);
+        return view('back.users.index', compact('users'));
+    }
+
+    public function showUser($id){
+
+        $user = User::findOrFail($id);
+        return view('back.users.show', compact('user'));
     }
 
     public function orders(){
 
-        return view('back.orders.index');
+        $orders = Order::paginate(50);
+        return view('back.orders.index' , compact('orders'));
     }
 }
