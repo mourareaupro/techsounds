@@ -28,7 +28,7 @@
                         @if($products->count())
                             @foreach($products as $product)
                                 <tr>
-                                    <td colspan="1"><a href="#"><img class="checkout-table-img" src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg" style="width: 50px; height: 50px" alt="Card image cap"></a></td>
+                                    <td colspan="1"><a href="#"><img class="checkout-table-img" src="{{asset('/img/'.$product->image)}}" style="width: 50px; height: 50px" alt="Card image cap"></a></td>
                                     <td>{{$product->name}}</td>
                                     <td class="text">@if($product->price === 0.00) <span class="text-info">Free</span> @else{{ presentPrice($product->price) }}@endif</td>
                                     <td>{{$product->downloads}}</td>

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\HtmlString;
 
 class Product extends Model
 {
@@ -47,5 +48,10 @@ class Product extends Model
 
     public function file(){
         return $this->belongsTo(FileProduct::class);
+    }
+
+    public function getProductDescription()
+    {
+        return new HtmlString($this->description);
     }
 }

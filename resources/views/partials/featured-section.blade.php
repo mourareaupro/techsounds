@@ -3,7 +3,7 @@
     <h1 class="text-white"><a href="{{route('product.show' , $featured_product->slug)}}"><span class="text-white">{{$featured_product->name}}</span></a>
         <br/>
     </h1>
-    <p class="text-white mb-3">{{$featured_product->description}}</p>
+    <p class="text-white mb-3">{{$featured_product->details}}</p>
     <div class="btn-wrapper mb-3">
         @if($featured_product->freeDownload())
             <form action="{{route('product.free' , $featured_product->id)}}" method="get">

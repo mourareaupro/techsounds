@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('name')->unique();
             $table->string('slug')->unique();
             $table->float('price');
+            $table->text('details')->nullable();
             $table->text('description')->nullable();
             $table->integer('downloads')->default(0);
             $table->string('file')->nullable();

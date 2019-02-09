@@ -43,22 +43,6 @@
             <!-- img product -->
             <div class="col-sm-4">
                 <img class="card-img-top" src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg" alt="Card image cap">
-            </div>
-
-            <!-- product title and descirption -->
-            <div class="col-sm-8"><hr class="line-info">
-                <h1>{{$product->name}}
-                    <span class="text-info">+</span> <span class="pull-right">@if(!$product->freeDownload()) {{presentPrice($product->price)}} @else Free download @endif</span>
-                </h1>
-                <p class="text-white">{{$product->description}}</p>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <!-- player -->
-            <div class="col-sm-4">
-                <div class="spacer"></div>
                 <div class="demo">
                     <ul>
                         <li>
@@ -68,14 +52,16 @@
                     </ul>
                 </div>
             </div>
-            <!-- player -->
 
-            <!-- product detail & buy link -->
-            <div class="col-sm-8">
+            <!-- product title and descirption -->
+            <div class="col-sm-8"><hr class="line-info">
+                <h1>{{$product->name}}
+                    <span class="text-info">+</span> <span class="pull-right">@if(!$product->freeDownload()) {{presentPrice($product->price)}}@endif</span>
+                </h1>
                 <div class="card">
                     <div class="card-body">
                         @if(!$product->freeDownload())
-                        <button id="add-to-cart" type="button" class="btn btn-info btn-lg text-center pull-right" data-id="{{ $product->id }}"><i class="tim-icons icon-simple-add"></i> Add to cart</button>
+                            <button id="add-to-cart" type="button" class="btn btn-info btn-lg text-center pull-right" data-id="{{ $product->id }}"><i class="tim-icons icon-simple-add"></i> Add to cart</button>
                         @else
                             <form action="{{route('product.free' , $product->id)}}" method="get">
                                 {{ csrf_field() }}
@@ -83,12 +69,14 @@
                                     <i class="tim-icons icon-cloud-download-93"></i> Free download
                                 </button>
                             </form>
-                        @endif
-                        <!-- product detail & buy link -->
+                    @endif
+                    <!-- product detail & buy link -->
                         <hr class="line-info">
                         <h2 class="card-title">Description</h2>
 
-                        <div class="text contents"><p><strong>Download Contains:</strong></p><ul><li>769 x 24-bit Wav files</li><li>340 x Apple Loops</li><li>340&nbsp;x Rex2 files</li><li>1 x Ableton Instrument Racks &amp; Projects for Ableton Live 9.7.7 (Melodic One Shots)</li><li>7 x FX Patches for Ableton Live 9.7.7</li></ul><div><p><strong>Drum Hits:</strong></p><ul><li>14 x Cymbals</li><li>57 x Foley</li><li>77 x Hats</li><li>91 x Kicks</li><li>45 x Percussion</li><li>78 x Snares</li><li>8 x Toms</li><li>5 x Custom Kits for Maschine 2 (2.7.8), Battery 4 (4.1.6), Kong (Reason 10.2), EXS24 (Logic 10.4.2), FPC (FL Studio 20.0.3) and Ableton Drum Rack (Live 9.7.7)</li><li>7 x Sampler Formats for Kontakt (5.8.1), NN-XT (Reason 10.2), EXS24 (Logic 10.4.2) and Ableton Drum Rack (Live 9.7.7)</li></ul></div></div>
+                        <div class="text contents">
+                            {{$product->getProductDescription()}}
+                        </div>
                     </div>
                 </div>
             </div>

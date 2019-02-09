@@ -36,6 +36,9 @@
     <link rel="stylesheet" href="{{ asset('css/override.css') }}">
     <!-- override -->
 
+    <script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+
     <!-- DataTables -->
     @if(config('adminlte.plugins.datatables'))
         <link rel="stylesheet" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
