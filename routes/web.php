@@ -38,8 +38,8 @@ Route::middleware ('admin')->group (function () {
     Route::get('/admin/edit/post/{slug}' ,  'AdminPostController@edit')->name('admin.edit.post');
 
 
-    Route::get('/admin/users' ,  'AdminController@index')->name('admin.users');
-    Route::get('/admin/user/{id}' ,  'AdminController@show')->name('admin.show.user');
+    Route::get('/admin/users' ,  'AdminUserController@index')->name('admin.users');
+    Route::get('/admin/user/{id}' ,  'AdminUserController@show')->name('admin.show.user');
 
     Route::name ('maintenance.')->prefix('maintenance')->group(function () {
         Route::name ('index')->get ('/', 'AdminController@editMaintenance');
