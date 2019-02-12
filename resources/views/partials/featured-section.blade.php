@@ -1,40 +1,20 @@
-<div class="col-sm-8">
-    <hr class="line-info">
-    <h1 class="text-white"><a href="{{route('product.show' , $featured_product->slug)}}"><span class="text-white">{{$featured_product->name}}</span></a>
-        <br/>
-    </h1>
-    <p class="text-white mb-3">{{$featured_product->details}}</p>
-    <div class="btn-wrapper mb-3">
-        @if($featured_product->freeDownload())
-            <form action="{{route('product.free' , $featured_product->id)}}" method="get">
-                {{ csrf_field() }}
-                <button type="submit" class="btn btn-info btn-round btn-lg text-center">
-                    <i class="tim-icons icon-cloud-download-93"></i> Free download
-                </button>
-            </form>
-        @else
-            <button id="add-to-cart" type="button" class="btn btn-info btn-round btn-lg text-center pull-right" data-id="{{ $featured_product->id }}"><i class="tim-icons icon-simple-add"></i> Add to cart</button>
-        @endif
-    </div>
-</div>
-<div class="col-sm-4">
-    <div class="work-container">
-        <div class="work-img">
-            <a href="{{route('product.show' , $featured_product->slug)}}">
-                <img src="{{asset('/img/'.$featured_product->image)}}"></a>
-            <div class="portfolio-overlay">
-                <div class="project-icons">
-                        <a id="product-route" href="{{route('product.show' , $featured_product->slug)}}" data-id="{{ $featured_product->id }}"><i class="fa fa-info"></i></a>
-                        <a class="play" data-url="{{$featured_product->audio}}" data-link="product-sample" data-sampleid="4362" data-productid="{{$featured_product->id}}"><i class="fa fa-play"></i></a>
-                        <a class="pause" data-url="{{$featured_product->audio}}" data-link="product-sample" data-sampleid="4362" data-productid="{{$featured_product->id}}"><i class="fa fa-pause"></i></a>
-
-                    @if(!$featured_product->freeDownload())
-                        <a id="add-to-cart-{{ $featured_product->id }}" data-id="{{ $featured_product->id }}"><i class="fa fa-shopping-cart"></i></a>
-                    @else
-                        <a id="product-route" href="{{route('product.free' , $featured_product->id)}}" data-id="{{ $featured_product->id }}"><i class="tim-icons icon-cloud-download-93"></i></a>
-                    @endif
-                </div>
+<div class="col-md-12">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="h-50" src="{{asset('/img/'.$featured_product->image)}}" alt="First slide">
             </div>
         </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
 </div>
