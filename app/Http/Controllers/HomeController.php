@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,6 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        SEOMeta::setTitle('Home');
+        SEOMeta::setDescription('Royalty free samples');
+        SEOMeta::addKeyword(['samples', 'techno music samples']);
 
         $user = Auth::user();
         $products = Product::paginate(4);
