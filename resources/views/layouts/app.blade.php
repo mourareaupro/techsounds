@@ -150,55 +150,12 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3">
-                            <h1 class="title">BLK•</h1>
+                            <img src="{{asset('img/techsoundspluslogo.png')}}" style="width: 200px">
                         </div>
                         <div class="col-md-3">
-                            <ul class="nav">
-                                <li class="nav-item">
-                                    <a href="../index.html" class="nav-link">
-                                        Home
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../examples/landing-page.html" class="nav-link">
-                                        Landing
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../examples/register-page.html" class="nav-link">
-                                        Register
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../examples/profile-page.html" class="nav-link">
-                                        Profile
-                                    </a>
-                                </li>
-                            </ul>
+
                         </div>
                         <div class="col-md-3">
-                            <ul class="nav">
-                                <li class="nav-item">
-                                    <a href="https://creative-tim.com/contact-us" class="nav-link">
-                                        Contact Us
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://creative-tim.com/about-us" class="nav-link">
-                                        About Us
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://creative-tim.com/blog" class="nav-link">
-                                        Blog
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://opensource.org/licenses/MIT" class="nav-link">
-                                        License
-                                    </a>
-                                </li>
-                            </ul>
                         </div>
                         <div class="col-md-3">
                             <h3 class="title">Follow us:</h3>
@@ -219,7 +176,7 @@
 
 
                 <!-- Copyright -->
-                <div class="footer-copyright text-center py-3 fixed-bottom">
+                <div class="footer-copyright text-center py-3 bottom">
                     © Tech sounds + 2019. All rights reserved. Yes, all of them.
                     Proudly hosted with Laravel Forge and DigitalOcean.
                 </div>
