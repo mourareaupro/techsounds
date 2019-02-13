@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<!--<div class="col-md-12">
     <hr class="line-info">
     <h3>Free downloads
         <span class="text-info">+</span>
@@ -35,7 +35,7 @@
                                                 {{presentPrice($product->price)}}
                                 </span>
                                 </h4>-->
-                        </div>
+                        <!--</div>
                     </div>
                 </div>
             @endforeach

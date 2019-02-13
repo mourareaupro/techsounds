@@ -1,3 +1,4 @@
+
 <div class="col-md-12">
     <hr class="line-info">
     <h3>New releases

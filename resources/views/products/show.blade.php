@@ -75,7 +75,7 @@
                         <h2 class="card-title">Description</h2>
 
                         <div class="text contents">
-                            {{$product->getProductDescription()}}
+                            <span class="text-white">{{$product->getProductDescription()}}</span>
                         </div>
                     </div>
                 </div>

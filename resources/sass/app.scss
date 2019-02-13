@@ -237,3 +237,19 @@ a {
     overflow: hidden;
     height: 350px;
 }
+
+
+@media (min-width: 768px) {
+    .info:first-of-type {
+        padding-top: 25%;
+    }
+}
+
+
+.icon.icon-success {
+    color: #f4645f;
+}
+
+.info .icon > i {
+    font-size: 3rem;
+}
