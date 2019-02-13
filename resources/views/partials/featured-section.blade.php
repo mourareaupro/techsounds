@@ -5,7 +5,7 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="h-50" src="{{asset('/img/'.$featured_product->image)}}" alt="First slide">
+                <img class="w-100" src="{{asset('/img/banners/bannertechsoundsplus.jpg')}}" alt="First slide">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

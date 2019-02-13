@@ -5,7 +5,7 @@
             <div class="card-title">
                 <hr class="line-info">
                 <h1 class="text-white">
-                    TOP 10
+                    TOP DOWNLOADS
                 </h1>
             </div>
             <div class="card-body">

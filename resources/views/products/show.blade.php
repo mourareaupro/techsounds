@@ -42,7 +42,7 @@
         <div class="row">
             <!-- img product -->
             <div class="col-sm-4">
-                <img class="card-img-top" src="https://geo-media.beatport.com/image/6b73336c-5da1-4f89-8ad7-f50c07ebe997.jpg" alt="Card image cap">
+                <img class="card-img-top" src="{{asset('/img/'.$product->image)}}" alt="Card image cap">
                 <div class="demo">
                     <ul>
                         <li>
