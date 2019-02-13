@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="col-lg-3 text-center">
         <div class="info">
-            <div class="icon icon-primary">
+            <div class="icon icon-success">
                 <i class="fas fa-lock fa-3x"></i>
             </div>
             <h4 class="info-title">TRUSTED SITE</h4>
@@ -9,7 +9,7 @@
     </div>
     <div class="col-lg-3 text-center">
         <div class="info">
-            <div class="icon icon-warning">
+            <div class="icon icon-success">
                 <i class="fas fa-user-secret fa-4x"></i>
             </div>
             <h4 class="info-title">PRIVACY GUARANTEED</h4>

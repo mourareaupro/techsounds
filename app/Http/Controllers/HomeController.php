@@ -27,10 +27,6 @@ class HomeController extends Controller
     public function index()
     {
 
-        SEOMeta::setTitle('Home');
-        SEOMeta::setDescription('Royalty free samples');
-        SEOMeta::addKeyword(['samples', 'techno music samples']);
-
         $user = Auth::user();
         $products = Product::paginate(4);
 
