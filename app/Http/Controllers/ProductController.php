@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\UserDownload;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -75,6 +76,11 @@ class ProductController extends Controller
     public function show($slug)
     {
         $product = Product::where('slug', $slug)->firstOrFail();
+
+        SEOMeta::setTitle($product->name);
+        SEOMeta::setDescription($product->description);
+        SEOMeta::addKeyword(['samples', 'techno music samples']);
+
         return view('products.show' , compact('product'));
     }
 
