@@ -12,7 +12,7 @@ class ProductsTableSeeder extends Seeder
     public function run()
     {
         // Samples
-        for ($i=1; $i <= 6; $i++) {
+        for ($i=1; $i <= 4; $i++) {
             \App\Models\Product::create([
                 'name' => 'Sample Pack '.$i,
                 'slug' => 'samples-pack-'.$i,

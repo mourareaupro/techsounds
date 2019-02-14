@@ -101,3 +101,8 @@ Route::get('services' , 'ServicesController@index')->name('services.index');
 
 //Newsletter
 Route::post('subscribe-newsletter' , 'NewsletterController@store')->name('newsletter.store');
+
+//Privacy
+Route::get('privacy', function () {
+    return 'Hello World';
+});
