@@ -58,6 +58,10 @@
                 <h1>{{$product->name}}
                     <span class="text-info">+</span> <span class="pull-right">@if(!$product->freeDownload()) {{presentPrice($product->price)}}@endif</span>
                 </h1>
+
+                <span class="text-white">Genre : </span><span class="text-info">Techno</span>
+
+                <div class="spacer"></div>
                 <div class="card">
                     <div class="card-body">
                         @if(!$product->freeDownload())
