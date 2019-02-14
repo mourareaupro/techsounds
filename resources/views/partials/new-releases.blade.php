@@ -32,6 +32,7 @@
                                 <a href="{{route('product.show' , $product->slug)}}">{{$product->name}}
                                 </a>
                             </h5>
+                            <span class="text-white pull-right">Free</span>
                         <!--<h4><span class="text-white card-price pull-right">
                                                 {{presentPrice($product->price)}}
                                 </span>

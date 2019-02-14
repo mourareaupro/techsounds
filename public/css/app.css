@@ -24134,6 +24134,11 @@ a {
 }
 
 .footer-copyright {
+  color: white;
   margin-top: 70px;
+}
+
+.form-control {
+  border-color: #525252;
 }
 

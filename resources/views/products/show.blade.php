@@ -41,8 +41,8 @@
         <!-- product detail -->
         <div class="row">
             <!-- img product -->
-            <div class="col-sm-4">
-                <img class="card-img-top" src="{{asset('/img/'.$product->image)}}" alt="Card image cap">
+            <div class="col-sm-3">
+                <img class="card-img-top" src="{{asset('/img/'.$product->image)}}" style="width: 250px; height: 250px;" alt="Card image cap">
                 <div class="demo">
                     <ul>
                         <li>
@@ -54,7 +54,7 @@
             </div>
 
             <!-- product title and descirption -->
-            <div class="col-sm-8"><hr class="line-info">
+            <div class="col-sm-9"><hr class="line-info">
                 <h1>{{$product->name}}
                     <span class="text-info">+</span> <span class="pull-right">@if(!$product->freeDownload()) {{presentPrice($product->price)}}@endif</span>
                 </h1>
