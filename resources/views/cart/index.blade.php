@@ -130,7 +130,7 @@
             @else
 
 
-            <h3 class="text-info">No items in Cart!</h3>
+            <h1 class="text-info">No items in Cart!</h1>
 
                 <div class="text-left"><a href="{{ route('home') }}" class="button">Start Shopping</a></div>
             @endif
