@@ -7,10 +7,10 @@ return [
          */
         'defaults'       => [
             'title'        => "Tech Sounds Plus", // set false to total remove
-            'description'  => 'Samples for techno producers', // set false to total remove
+            'description'  => 'Download sample packs, courses, Ableton templates & royalty-free music loops for Techno music production.', // set false to total remove
             'separator'    => ' - ',
-            'keywords'     => ['samples', 'techno samples', 'techno music', 'electronic music samples', 'techno soundpack', 'soundbank'],
-            'canonical'    => false, // Set null for using Url::current(), set false to total remove
+            'keywords'     => ['samples', 'techno samples', 'techno music', 'music samples', 'techno soundpack', 'soundbank' , 'ableton' , 'ableton template'],
+            'canonical'    => null, // Set null for using Url::current(), set false to total remove
         ],
 
         /*
