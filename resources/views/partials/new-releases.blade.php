@@ -1,9 +1,9 @@
 
 <div class="col-md-12">
     <hr class="line-info">
-    <h3>New releases
+    <h1>New releases
         <span class="text-info">+</span>
-    </h3>
+    </h1>
     <div class="container">
         <div class="row">
             @foreach($products as $product)

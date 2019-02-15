@@ -4,9 +4,9 @@
         <div class="card-body">
             <div class="card-title">
                 <hr class="line-info">
-                <h3 class="text-white">
+                <h1 class="text-white">
                     TOP DOWNLOADS
-                </h3>
+                </h1>
             </div>
             <div class="card-body">
                 @php $rank = 1 @endphp
