@@ -7,9 +7,18 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    {!! SEOMeta::generate() !!}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134637203-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+        gtag('config', 'UA-134637203-1');
+    </script>
+
+
+    {!! SEOMeta::generate() !!}
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
