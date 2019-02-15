@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Services\SocialFacebookAccountService;
 use Illuminate\Http\Request;
 use Socialite;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class SocialAuthFacebookController extends Controller
 {
@@ -27,6 +28,8 @@ class SocialAuthFacebookController extends Controller
     {
         $user = $service->createOrGetUser(Socialite::driver('facebook')->user());
         auth()->login($user);
+
+        Alert::success('You are logged in', 'Have fun :)');
         return redirect()->to('/');
     }
 }

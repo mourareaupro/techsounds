@@ -7,6 +7,7 @@ use http\Url;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Http\Controllers\Auth\Request;
 use Illuminate\Support\Facades\Session;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LoginController extends Controller
 {
@@ -43,6 +44,7 @@ class LoginController extends Controller
 
     public function redirectTo()
     {
+        Alert::success('You are logged in', 'Have fun :)');
         return Session::get('backUrl') ? Session::get('backUrl') :   $this->redirectTo;
     }
 
