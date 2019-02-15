@@ -7,7 +7,7 @@
 
         <div class="form-row text-center">
             <div class="col-md-12">
-                <a href="{{url('/facebook/redirect')}}" class="btn btn-primary btn-lg btn-facebook btn-round"><i class="fab fa-facebook-f"></i>   Create your account with Facebook</a>
+                <a href="{{url('/facebook/redirect')}}" class="btn btn-primary btn-lg btn-facebook btn-round"><i class="fab fa-facebook-f"></i>   Register with Facebook</a>
             </div>
         </div>
 
