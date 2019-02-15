@@ -27,7 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        SEO::setTitle('Sample Packs, Synth Presets, Ableton Templates,Courses for Electronic Music Producers');
+        SEO::setTitle('Sample Packs, Synth Presets, Templates,Courses for Electronic Music Producers');
         SEO::setDescription('Download techno sample packs, presets, loops. All professionally produced, royalty free and ready to drop into your projects.');
         SEO::opengraph()->setUrl('https://www.techsoundsplus.com');
         SEO::opengraph()->addProperty('type', 'website');
