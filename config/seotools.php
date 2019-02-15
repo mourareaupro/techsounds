@@ -29,12 +29,12 @@ return [
          * The default configurations to be used by the opengraph generator.
          */
         'defaults' => [
-            'title'       => 'Over 9000 Thousand!', // set false to total remove
-            'description' => 'For those who helped create the Genki Dama', // set false to total remove
-            'url'         => false, // Set null for using Url::current(), set false to total remove
-            'type'        => false,
-            'site_name'   => false,
-            'images'      => [],
+            'title'       => 'Tech Sounds Plus', // set false to total remove
+            'description' => 'Download sample packs, courses, Ableton templates & royalty-free music loops for Techno music production.', // set false to total remove
+            'url'         => null, // Set null for using Url::current(), set false to total remove
+            'type'        => 'website',
+            'site_name'   => 'Tech Sounds Plus',
+            'images'      => ['https://techsoundsplus.com/img/techsoundspluslogo.png'],
         ],
     ],
     'twitter' => [
@@ -42,8 +42,8 @@ return [
          * The default values to be used by the twitter cards generator.
          */
         'defaults' => [
-          //'card'        => 'summary',
-          //'site'        => '@LuizVinicius73',
+          'card'        => 'summary',
+          'site'        => '@techsoundsplus',
         ],
     ],
 ];

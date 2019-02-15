@@ -6,6 +6,7 @@ use App\Models\Product;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use SEO;
 
 class HomeController extends Controller
 {
@@ -26,6 +27,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+        SEO::setTitle('Sample Packs & Loops, Synth Presets, Ableton Templates,Video Courses for Electronic Music Producers');
+        SEO::setDescription('Download techno sample packs, presets, loops. All professionally produced, royalty free and ready to drop into your projects.');
+        SEO::opengraph()->setUrl('https://www.techsoundsplus.com');
+        SEO::opengraph()->addProperty('type', 'website');
+        SEO::twitter()->setSite('@techsoundsplus');
 
         $user = Auth::user();
         $products = Product::paginate(4);
