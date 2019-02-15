@@ -46,11 +46,22 @@
                 'name' => 'password_confirmation',
                 'required' => true,
                 ])
-            <div class="form-group">
+            <!--<div class="form-group">
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="ok" name="ok" required>
                     <label class="custom-control-label" for="ok"> @lang('J\'accepte les termes et conditions de la politique de confidentialité.')</label>
                 </div>
+            </div>-->
+
+
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" id="ok" name="ok" required>
+                    @lang('J\'accepte les termes et conditions de la politique de confidentialité.')
+                    <span class="form-check-sign">
+                        <span class="check"></span>
+                    </span>
+                </label>
             </div>
             @component('components.button')
                 @lang('Inscription')

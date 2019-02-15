@@ -33,15 +33,26 @@
                 'name' => 'password',
                 'required' => true,
                 ])
-            <div class="custom-control custom-checkbox">
+            <!--<div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="remember" name="remember" {{ old('remember') ? 'checked' : '' }}>
                 <label class="custom-control-label" for="remember"> @lang('Remember me')</label>
+            </div>-->
+
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" id="remember" name="remember" {{ old('remember') ? 'checked' : '' }}>
+                    @lang('Remember me')
+                    <span class="form-check-sign">
+                        <span class="check"></span>
+                    </span>
+                </label>
             </div>
+
             <a class="btn btn-link text-white" href="{{ route('password.request') }}">
                 @lang('Forgot your password ?')
             </a>
             @component('components.button')
-                @lang('Connexion')
+                @lang('Log in')
             @endcomponent
 
 
