@@ -28,7 +28,7 @@
                 @if (Cart::count() > 0)
 
                     <hr class="line-info">
-                    <h2 class="text-white">Cart</h2>
+                    <h1 class="text-white">Cart</h1>
 
                         <table class="table">
                             <thead>
