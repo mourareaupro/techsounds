@@ -25,6 +25,12 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-12">
+            @include('back.partials.analytics-preview')
+        </div>
+    </div>
+
 
 
 @stop

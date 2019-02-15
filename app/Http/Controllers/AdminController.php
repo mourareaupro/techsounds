@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\IpUtils;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Artisan;
+use Spatie\Analytics\AnalyticsFacade as Analytics;
+use Spatie\Analytics\Period;
 
 class AdminController extends Controller
 {
@@ -22,7 +24,13 @@ class AdminController extends Controller
     {
         $orders = Order::paginate(10);
         $products = Product::paginate(10);
-        return view('back.index', compact('orders','products'));
+        $analyticsData = Analytics::fetchVisitorsAndPageViews(Period::days(7));
+
+        foreach ($analyticsData as $data){
+            //dd($data);
+
+        }
+        return view('back.index', compact('orders','products', 'analyticsData'));
     }
 
 
