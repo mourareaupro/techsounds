@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="google-site-verification" content="googleb9c943a45663fcdc">
+    <meta name="google-site-verification" content="xAUePEJ9ZeQBIyQeeOHd5Cnud8EsjXJHFWNrvJs6MpM" />
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
