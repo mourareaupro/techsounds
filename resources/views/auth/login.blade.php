@@ -22,23 +22,23 @@
         <form method="POST" action="{{ route('login') }}">
             {{ csrf_field() }}
             @include('partials.form-group', [
-                'title' => __('Adresse email'),
+                'title' => __('E-mail'),
                 'type' => 'email',
                 'name' => 'email',
                 'required' => true,
                 ])
             @include('partials.form-group', [
-                'title' => __('Mot de passe'),
+                'title' => __('Password'),
                 'type' => 'password',
                 'name' => 'password',
                 'required' => true,
                 ])
             <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="remember" name="remember" {{ old('remember') ? 'checked' : '' }}>
-                <label class="custom-control-label" for="remember"> @lang('Se rappeler de moi')</label>
+                <label class="custom-control-label" for="remember"> @lang('Remember me')</label>
             </div>
-            <a class="btn btn-link" href="{{ route('password.request') }}">
-                @lang('Mot de passe oublié ?')
+            <a class="btn btn-link text-white" href="{{ route('password.request') }}">
+                @lang('Forgot your password ?')
             </a>
             @component('components.button')
                 @lang('Connexion')

@@ -7,18 +7,18 @@
     @endif
     @component('components.card')
         @slot('title')
-            @lang('Renouvellement du mot de passe')
+            @lang('Renew password')
         @endslot
         <form method="POST" action="{{ route('password.email') }}">
             {{ csrf_field() }}
             @include('partials.form-group', [
-                'title' => __('Adresse email'),
+                'title' => __('E-mail'),
                 'type' => 'email',
                 'name' => 'email',
                 'required' => true,
                 ])
             @component('components.button')
-                @lang('Envoi de la demande')
+                @lang('Send request')
             @endcomponent
         </form>
     @endcomponent
