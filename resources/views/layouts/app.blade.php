@@ -42,7 +42,7 @@
         <nav class="navbar navbar-expand-lg fixed-top navbar-black" color-on-scroll="0">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                   <img src="{{asset('img/techsoundspluslogo.png')}}">
+                   <img src="{{asset('img/techsoundspluslogo.png')}}" alt="Tech Sounds Plus">
                 </a>
 
                 <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,7 +56,7 @@
                         <div class="row">
                             <div class="col-6 collapse-brand">
                                 <a class="navbar-brand" href="{{ url('/') }}">
-                                    <img src="{{asset('img/techsoundspluslogo.png')}}">
+                                    <img src="{{asset('img/techsoundspluslogo.png')}}" alt="Tech Sounds Plus">
                                 </a>
                             </div>
                             <div class="col-6 collapse-close text-right">

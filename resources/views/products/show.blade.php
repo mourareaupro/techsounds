@@ -42,7 +42,7 @@
         <div class="row">
             <!-- img product -->
             <div class="col-sm-3">
-                <img class="card-img-top" src="{{asset('/img/'.$product->image)}}" style="width: 250px; height: 250px;" alt="Card image cap">
+                <img class="card-img-top" src="{{asset('/img/'.$product->image)}}" style="width: 250px; height: 250px;" alt="{{$product->name}}">
                 <div class="demo">
                     <ul>
                         <li>
