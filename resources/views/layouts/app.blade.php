@@ -17,6 +17,8 @@
         gtag('config', 'UA-134637203-1');
     </script>
 
+    <meta name="google-site-verification" content="googleb9c943a45663fcdc.html">
+
 
     {!! SEOMeta::generate() !!}
 
