@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Product;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -16,6 +17,8 @@ class CartController extends Controller
      */
     public function index()
     {
+        SeoMeta::setTitle('Cart');
+
         return view('cart.index')->with([
             'discount' => getNumbers()->get('discount'),
             'newSubtotal' => getNumbers()->get('newSubtotal'),

@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Http\Controllers\Auth\Request;
 use Illuminate\Support\Facades\Session;
 use RealRashid\SweetAlert\Facades\Alert;
+use Artesaos\SEOTools\Facades\SEOMeta;
 
 class LoginController extends Controller
 {
@@ -38,6 +39,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        SeoMeta::setTitle('Login');
         $this->middleware('guest')->except('logout');
         Session::put('backUrl', \Illuminate\Support\Facades\URL::previous());
     }
