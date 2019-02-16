@@ -20,7 +20,7 @@
             <div class="row">
 
                 <!-- left section -->
-                <div class="col-sm-8">
+                <div class="col-md-12 col-lg-8">
                     <div class="row">
                         <!-- featured -->
                             @include('partials.featured-section')

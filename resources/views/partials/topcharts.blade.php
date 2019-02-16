@@ -1,5 +1,5 @@
 <!-- section right -->
-<div class="col-md-4">
+<div class="col-md-4 d-none d-lg-block">
     <div class="card charts">
         <div class="card-body">
             <div class="card-title">

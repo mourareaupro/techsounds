@@ -139,7 +139,7 @@
                     <div class="row">
                         <div class="col">
                         </div>
-                        <div class="col-6">
+                        <div class="col-md-6 d-none d-md-block">
                             <h3 class="text-center">Subscribe to our Newsletter</h3>
                             <form action="{{ route('newsletter.store') }}" method="POST">
                                 {{ csrf_field() }}
