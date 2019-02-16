@@ -24,7 +24,7 @@ class AdminController extends Controller
     {
         $orders = Order::orderBy('created_at' , 'DESC')->paginate(5);
         $products = Product::orderBy('created_at' , 'DESC')->paginate(5);
-        $analyticsData = Analytics::fetchVisitorsAndPageViews(Period::days(7));
+        $analyticsData = Analytics::fetchVisitorsAndPageViews(Period::days(1));
 
         foreach ($analyticsData as $data){
             //dd($data);
