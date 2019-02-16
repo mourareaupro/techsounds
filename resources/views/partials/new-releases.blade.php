@@ -25,6 +25,7 @@
                                     @endif
                                 </div>
                             </div>
+                            @if(!$product->file)<span style="font-weight: bold">SOON</span>@endif
                         </div>
                         <div class="work-description">
                             <hr class="line-info">

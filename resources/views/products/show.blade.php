@@ -42,7 +42,12 @@
         <div class="row">
             <!-- img product -->
             <div class="col-sm-3">
-                <img class="card-img-top" src="{{asset('/img/'.$product->image)}}" style="width: 250px; height: 250px;" alt="{{$product->name}}">
+                <div class="work-container">
+                    <div class="work-img">
+                        <img class="card-img-top" src="{{asset('/img/'.$product->image)}}" style="width: 250px; height: 250px;" alt="{{$product->name}}">
+                        @if(!$product->file)<span style="font-weight: bold">SOON</span>@endif
+                    </div>
+                </div>
                 <div class="demo">
                     <ul>
                         <li>
@@ -66,7 +71,7 @@
                     <div class="card-body">
                         @if(!$product->freeDownload())
                             <button id="add-to-cart" type="button" class="btn btn-info btn-lg text-center pull-right" data-id="{{ $product->id }}"><i class="tim-icons icon-simple-add"></i> Add to cart</button>
-                        @else
+                        @elseif($product->freeDownload() && $product->file)
                             <form action="{{route('product.free' , $product->id)}}" method="get">
                                 {{ csrf_field() }}
                                 <button type="submit" class="btn btn-info btn-round btn-lg text-center pull-right">
