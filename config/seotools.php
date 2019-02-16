@@ -34,7 +34,7 @@ return [
             'url'         => null, // Set null for using Url::current(), set false to total remove
             'type'        => 'website',
             'site_name'   => 'Tech Sounds Plus',
-            'images'      => ['https://techsoundsplus.com/img/logos/techsoundspluslogo_og.png'],
+            'images'      => ['https://techsoundsplus.com/img/logos/techsoundsplus_og.png'],
         ],
     ],
     'twitter' => [
