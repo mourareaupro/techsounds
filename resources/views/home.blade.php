@@ -46,9 +46,6 @@
             <!-- featured product -->
 
 
-            @include('partials.footer-banner')
-
-
     </div><!-- page header -->
 
 @endsection

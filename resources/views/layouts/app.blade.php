@@ -130,6 +130,8 @@
         </main>
 
 
+        @include('partials.footer-banner')
+
         <footer class="footer">
             <div class="container">
                 <div class="spacer"></div>
