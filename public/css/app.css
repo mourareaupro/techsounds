@@ -24019,7 +24019,12 @@ h1.checkout-heading {
 .footer {
   background: black;
   border-top: #f4645f;
-  height: 400px;
+}
+
+@media screen and (min-width: 991px) {
+  .footer {
+    height: 400px;
+  }
 }
 
 .btn-info {
