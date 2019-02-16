@@ -64,6 +64,16 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- menu pages -->
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item{{ currentRoute(route('cart.index')) }}"><a class="nav-link" href="{{ route('cart.index') }}">Samples</a></li>
+                        <li class="nav-item{{ currentRoute(route('cart.index')) }}"><a class="nav-link" href="{{ route('cart.index') }}">Synth Presets</a></li>
+                        <li class="nav-item{{ currentRoute(route('cart.index')) }}"><a class="nav-link" href="{{ route('cart.index') }}">Templates</a></li>
+                        <li class="nav-item{{ currentRoute(route('cart.index')) }}"><a class="nav-link" href="{{ route('cart.index') }}">Courses</a></li>
+                        <li class="nav-item{{ currentRoute(route('cart.index')) }}"><a class="nav-link" href="{{ route('cart.index') }}">Blog</a></li>
+                    </ul>
+
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
 
