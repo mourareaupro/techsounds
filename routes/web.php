@@ -85,6 +85,12 @@ Route::middleware('auth')->group(function () {
 
 //Product
 Route::get('products' , 'ProductController@index')->name('product.index');
+Route::get('products/samples' , 'ProductController@indexSamples')->name('product.samples');
+Route::get('products/synths' , 'ProductController@indexSynths')->name('product.synths');
+Route::get('products/courses' , 'ProductController@indexCourses')->name('product.courses');
+Route::get('products/templates' , 'ProductController@indexTemplates')->name('product.templates');
+
+
 Route::get('product/{slug}' , 'ProductController@show')->name('product.show');
 Route::get('download/{product}' , 'ProductController@download')->name('product.download');
 Route::get('ajax/product/{id}' , 'ProductController@getAjaxProduct');

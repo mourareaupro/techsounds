@@ -67,11 +67,11 @@
 
                     <!-- menu pages -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item{{ currentRoute(route('cart.index')) }}"><a class="nav-link" href="{{ route('cart.index') }}">Samples</a></li>
-                        <li class="nav-item{{ currentRoute(route('cart.index')) }}"><a class="nav-link" href="{{ route('cart.index') }}">Synth Presets</a></li>
-                        <li class="nav-item{{ currentRoute(route('cart.index')) }}"><a class="nav-link" href="{{ route('cart.index') }}">Templates</a></li>
-                        <li class="nav-item{{ currentRoute(route('cart.index')) }}"><a class="nav-link" href="{{ route('cart.index') }}">Courses</a></li>
-                        <li class="nav-item{{ currentRoute(route('cart.index')) }}"><a class="nav-link" href="{{ route('cart.index') }}">Blog</a></li>
+                        <li class="nav-item{{ currentRoute(route('product.samples')) }}"><a class="nav-link" href="{{ route('product.samples') }}">Samples</a></li>
+                        <li class="nav-item{{ currentRoute(route('product.synths')) }}"><a class="nav-link" href="{{ route('product.synths') }}">Synth Presets</a></li>
+                        <li class="nav-item{{ currentRoute(route('product.templates')) }}"><a class="nav-link" href="{{ route('product.templates') }}">Templates</a></li>
+                        <li class="nav-item{{ currentRoute(route('product.courses')) }}"><a class="nav-link" href="{{ route('product.courses') }}">Courses</a></li>
+                        <li class="nav-item{{ currentRoute(route('blog.index')) }}"><a class="nav-link" href="{{ route('blog.index') }}">Blog</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

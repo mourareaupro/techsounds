@@ -23,6 +23,26 @@
                     </div>
                 @endif
 
+
+                    <div class="row">
+                        <div class="col">
+                        </div>
+                        <div class="col-md-6 d-none d-md-block">
+                            <h3 class="text-center">This section is coming soon, you can keep you update</h3>
+                            <form action="{{ route('newsletter.store') }}" method="POST">
+                                {{ csrf_field() }}
+                                <div class="input-group">
+                                    <input type="email" class="form-control form-control-newsletter" placeholder="sunlimetech@gmail.com" aria-label="Recipient's username" aria-describedby="button-addon2" required>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-info" type="submit" id="button-addon2"><i class="fa fa-paper-plane"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col">
+                        </div>
+                    </div>
+
             </div>
         </div>
     </div>

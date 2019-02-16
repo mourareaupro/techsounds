@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use App\Models\UserDownload;
 use Artesaos\SEOTools\Facades\SEOMeta;
@@ -44,6 +45,66 @@ class ProductController extends Controller
             'categories' => $categories,
             'categoryName' => $categoryName,
         ]);
+    }
+
+    public function indexSamples(){
+
+        $categorie = Category::where('slug' , 'samples')->first();
+
+        $products = Product::with('categories')->whereHas('categories', function ($query) use ($categorie) {
+            $query->where('slug', $categorie->slug);
+        })->get();
+
+        return view('products.index')->with([
+            'products' => $products,
+            'categoryName' => $categorie->name,
+        ]);
+    }
+
+    public function indexSynths(){
+
+        $categorie = Category::where('slug' , 'synths')->first();
+
+        $products = Product::with('categories')->whereHas('categories', function ($query) use ($categorie) {
+            $query->where('slug', $categorie->slug);
+        })->get();
+
+        return view('products.index')->with([
+            'products' => $products,
+            'categoryName' => $categorie->name,
+        ]);
+
+
+    }
+
+    public function indexCourses(){
+
+        $categorie = Category::where('slug' , 'courses')->first();
+
+        $products = Product::with('categories')->whereHas('categories', function ($query) use ($categorie) {
+            $query->where('slug', $categorie->slug);
+        })->get();
+
+        return view('products.index')->with([
+            'products' => $products,
+            'categoryName' => $categorie->name,
+        ]);
+
+    }
+
+    public function indexTemplates(){
+
+        $categorie = Category::where('slug' , 'templates')->first();
+
+        $products = Product::with('categories')->whereHas('categories', function ($query) use ($categorie) {
+            $query->where('slug', $categorie->slug);
+        })->get();
+
+        return view('products.index')->with([
+            'products' => $products,
+            'categoryName' => $categorie->name,
+        ]);
+
     }
 
     /**
