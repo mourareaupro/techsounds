@@ -144,7 +144,7 @@
                             <form action="{{ route('newsletter.store') }}" method="POST">
                                 {{ csrf_field() }}
                                 <div class="input-group">
-                                    <input type="email" class="form-control form-control-newsletter" placeholder="sunlimetech@gmail.com" aria-label="Recipient's username" aria-describedby="button-addon2" required>
+                                    <input type="email" name="email" class="form-control form-control-newsletter" placeholder="me@mail.com" aria-label="Recipient's username" aria-describedby="button-addon2" required>
                                     <div class="input-group-append">
                                         <button class="btn btn-info" type="submit" id="button-addon2"><i class="fa fa-paper-plane"></i></button>
                                     </div>

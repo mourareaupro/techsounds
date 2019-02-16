@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Spatie\Newsletter\NewsletterFacade;
-
+use Spatie\Newsletter\NewsletterFacade as Newsletter;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class NewsletterController extends Controller
 {
@@ -36,9 +36,10 @@ class NewsletterController extends Controller
      */
     public function store(Request $request)
     {
-        NewsletterFacade::subscribe($request->input('email'));
 
-        die;
+        Newsletter::subscribe($request->input('email'));
+        Alert::success('Thanks for your subscription', 'Have fun :)');
+        return redirect('/');
     }
 
     /**
