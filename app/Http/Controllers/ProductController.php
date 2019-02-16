@@ -156,7 +156,7 @@ class ProductController extends Controller
 
         $user_download = UserDownload::where('user_id' , auth()->user()->id)->where('product_id' , $product->id)->exists();
 
-        if(!$user_download && $product->file){
+        if(!$user_download && $product->file && Storage::disk('s3')->exists($product->file)){
 
             $user_download = new UserDownload();
             $user_download->user_id = auth()->user()->id;
