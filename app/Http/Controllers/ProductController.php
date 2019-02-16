@@ -49,6 +49,10 @@ class ProductController extends Controller
 
     public function indexSamples(){
 
+        SEOMeta::setTitle('Samples');
+        //SEOMeta::setDescription('Download Royalty Free Ableton Live Templates and learn the latest music production techniques.');
+        SEOMeta::addKeyword(['Techno samples', 'techno soundbank' , 'music samples']);
+
         $categorie = Category::where('slug' , 'samples')->first();
 
         $products = Product::with('categories')->whereHas('categories', function ($query) use ($categorie) {
@@ -63,6 +67,9 @@ class ProductController extends Controller
 
     public function indexSynths(){
 
+        SEOMeta::setTitle('Synth Presets');
+        //SEOMeta::setDescription('Download Royalty Free Ableton Live Templates and learn the latest music production techniques.');
+        SEOMeta::addKeyword(['Techno Courses', 'Music courses' , 'Techno courses']);
         $categorie = Category::where('slug' , 'synths')->first();
 
         $products = Product::with('categories')->whereHas('categories', function ($query) use ($categorie) {
@@ -79,6 +86,10 @@ class ProductController extends Controller
 
     public function indexCourses(){
 
+        SEOMeta::setTitle('Courses');
+        //SEOMeta::setDescription('Download Royalty Free Ableton Live Templates and learn the latest music production techniques.');
+        SEOMeta::addKeyword(['Techno Courses', 'Music courses' , 'Techno courses' , 'techno tutorial']);
+
         $categorie = Category::where('slug' , 'courses')->first();
 
         $products = Product::with('categories')->whereHas('categories', function ($query) use ($categorie) {
@@ -93,6 +104,10 @@ class ProductController extends Controller
     }
 
     public function indexTemplates(){
+
+        SEOMeta::setTitle('Ableton Templates');
+        SEOMeta::setDescription('Download Royalty Free Ableton Live Templates and learn the latest music production techniques.');
+        SEOMeta::addKeyword(['ableton', 'ableton templates' , 'abelton techno']);
 
         $categorie = Category::where('slug' , 'templates')->first();
 
