@@ -30,6 +30,7 @@ Route::middleware ('admin')->group (function () {
 
     Route::get('/admin/products' ,  'AdminProductController@index')->name('admin.products');
     Route::get('/admin/new/product' ,  'AdminProductController@create')->name('admin.new.product');
+    Route::post('/admin/store/product' ,  'AdminProductController@store')->name('admin.store.product');
     Route::get('/admin/edit/product/{slug}' ,  'AdminProductController@edit')->name('admin.edit.product');
     Route::post('/admin/update/product/{id}' ,  'AdminProductController@update')->name('admin.udpate.product');
     Route::post('/admin/update/product/image/{id}' ,  'AdminProductController@update')->name('admin.udpate.product.image');

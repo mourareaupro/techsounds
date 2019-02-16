@@ -24,6 +24,13 @@ class AdminProductController extends Controller
         return view('back.products.edit' , compact('product'));
     }
 
+    public function store(Request $request){
+
+        Product::create($request->all());
+
+        return redirect()->action('AdminController@index')->with('success', 'Product Added !');
+    }
+
 
     public function update(Request $request, $id){
 

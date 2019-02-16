@@ -22,8 +22,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $orders = Order::paginate(10);
-        $products = Product::paginate(10);
+        $orders = Order::orderBy('created_at' , 'DESC')->paginate(5);
+        $products = Product::orderBy('created_at' , 'DESC')->paginate(5);
         $analyticsData = Analytics::fetchVisitorsAndPageViews(Period::days(7));
 
         foreach ($analyticsData as $data){
