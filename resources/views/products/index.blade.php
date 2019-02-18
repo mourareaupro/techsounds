@@ -26,7 +26,7 @@
                 @if(count($products))
                     <div class="col-md-12">
                         <hr class="line-info">
-                        <h1>SAMPLES
+                        <h1>{{$categoryName}}
                             <span class="text-info">+</span>
                         </h1>
                         <div class="container">
