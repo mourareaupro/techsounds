@@ -5,7 +5,7 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="w-100" src="{{asset('/img/banners/bannertechsoundsplus.jpg')}}" alt="First slide">
+                <a href="https://techsoundsplus.com/product/analog-kicks"><img class="w-100" src="{{asset('/img/banners/bannertechsoundsplus.jpg')}}" alt="First slide"></a>
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
