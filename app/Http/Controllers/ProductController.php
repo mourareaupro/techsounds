@@ -246,7 +246,7 @@ class ProductController extends Controller
 
         }else{
 
-            Alert::error('Download error', 'file not found');
+            Alert::error('Download error', 'you already downloaded this sample pack');
             return back();
         }
     }
