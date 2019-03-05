@@ -54,6 +54,12 @@ class PostController extends Controller
     public function show($slug)
     {
         $post = Post::where('slug', $slug)->firstOrFail();
+
+        SEOMeta::setTitle($post->name);
+        SEOMeta::setDescription($post->description);
+        //SEOMeta::addKeyword(['samples', 'techno music samples']);
+
+
         return view('posts.show' , compact($post));
     }
 
