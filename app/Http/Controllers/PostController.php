@@ -20,7 +20,7 @@ class PostController extends Controller
         //SEOMeta::setDescription('Download Royalty Free Ableton Live Templates and learn the latest music production techniques.');
         SEOMeta::addKeyword(['techno samples', 'techno soundbank' , 'music samples' , 'sample packs' , 'techno music samples']);
 
-        $posts = Post::all();
+        $posts = Post::orderBy('created_at', 'DESC')->get();
         return view('posts.index' , compact('posts'));
     }
 
