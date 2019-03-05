@@ -9,7 +9,7 @@ return [
             'title'        => "Tech Sounds Plus", // set false to total remove
             'description'  => 'Download sample packs, courses, Ableton templates & royalty-free music loops for Techno music production.', // set false to total remove
             'separator'    => ' - ',
-            'keywords'     => ['samples', 'techno samples', 'techno music', 'music samples', 'techno soundpack', 'soundbank' , 'ableton' , 'ableton template'],
+            'keywords'     => ['samples', 'techno samples', 'techno music', 'music samples', 'techno soundpack', 'soundbank' , 'ableton' , 'ableton template' , 'sample packs'],
             'canonical'    => null, // Set null for using Url::current(), set false to total remove
         ],
 
