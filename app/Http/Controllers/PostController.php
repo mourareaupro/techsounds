@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Artesaos\SEOTools\Facades\SEOMeta;
 
 class PostController extends Controller
 {
@@ -14,6 +15,11 @@ class PostController extends Controller
      */
     public function index()
     {
+
+        SEOMeta::setTitle('Blog');
+        //SEOMeta::setDescription('Download Royalty Free Ableton Live Templates and learn the latest music production techniques.');
+        SEOMeta::addKeyword(['techno samples', 'techno soundbank' , 'music samples' , 'sample packs' , 'techno music samples']);
+
         $posts = Post::all();
         return view('posts.index' , compact('posts'));
     }
