@@ -101,7 +101,7 @@ Route::get('free-download/{product}' , 'ProductController@freeDownload')->name('
 
 //Blog
 Route::get('blog' , 'PostController@index')->name('blog.index');
-Route::get('post/{slug}' , 'PostController@show')->name('post.show');
+Route::get('blog/{slug}' , 'PostController@show')->name('post.show');
 
 //Services
 Route::get('services' , 'ServicesController@index')->name('services.index');
