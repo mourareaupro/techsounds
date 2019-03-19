@@ -57,7 +57,7 @@
             <div class="form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" type="checkbox" id="ok" name="ok" required>
-                    @lang('J\'accepte les termes et conditions de la politique de confidentialité.')
+                    @lang('I agree to receive free downloads and new releases by mail.')
                     <span class="form-check-sign">
                         <span class="check"></span>
                     </span>
