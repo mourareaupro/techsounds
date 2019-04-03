@@ -56,7 +56,7 @@
 
             <div class="form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" id="ok" name="ok" required>
+                    <input class="form-check-input" type="checkbox" id="ok" name="ok">
                     @lang('I agree to receive free downloads and new releases by mail.')
                     <span class="form-check-sign">
                         <span class="check"></span>

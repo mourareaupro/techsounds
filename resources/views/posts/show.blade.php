@@ -2,12 +2,13 @@
 
 @section('content')
 
-    <div class="page-header" style="background: #0e3178">
+    <div class="page-header">
         <!--<img src="http://www.controleur-launchpad.info/wp-content/uploads/2017/10/ABLETON01.jpg" style="width: 100%; height: 100%">-->
-        <img src="../assets/img/path4.png" class="path">
+        <img src="#" class="path">
         <div class="container align-items-center">
             <div class="row">
                 <div class="col-lg-12 col-md-12">
+                    <div class="spacer"></div>
                     <h1 class="text-on-back text-center">{{$post->title}}</h1>
                     </div>
                 </div>
@@ -18,7 +19,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-
+                <p>{{$post->description}}</p>
                 <div id="disqus_thread"></div>
                 <script>
 
