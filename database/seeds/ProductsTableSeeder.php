@@ -17,6 +17,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'Sample Pack '.$i,
                 'slug' => 'samples-pack-'.$i,
                 'price' => rand(10.99, 22.56),
+                'size' => 0,
                 'description' =>'Lorem '. $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
                 'image' => 'products/dummy/laptop-'.$i.'.jpg',
                 'images' => '["products\/dummy\/laptop-2.jpg","products\/dummy\/laptop-3.jpg","products\/dummy\/laptop-4.jpg"]',
